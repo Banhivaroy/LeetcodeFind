@@ -1,0 +1,999 @@
+[
+  {
+    "id": 322,
+    "title": "Coin Change",
+    "description": "You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.\n\nReturn the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`.\n\nYou may assume that you have an infinite number of each kind of coin.\n\n\nExample 1:\nInput: coins = [1,2,5], amount = 11\nOutput: 3\nExplanation: 11 = 5 + 5 + 1\n\nExample 2:\nInput: coins = [2], amount = 3\nOutput: -1\n\nExample 3:\nInput: coins = [1], amount = 0\nOutput: 0\n\nExample 4:\nInput: coins = [1], amount = 1\nOutput: 1\n\nExample 5:\nInput: coins = [1], amount = 2\nOutput: 2\n\nConstraints:\n`1 <= coins.length <= 12`\n`1 <= coins[i] <= 231 - 1`\n`0 <= amount <= 104`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/coin-change",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The input `coins` is an integer array, and the solution iterates through its elements."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "one dimensional dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution uses a state `dp[i]` representing the minimum coins for amount `i`, making it a one-dimensional DP."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The problem is solved by breaking it into overlapping subproblems (minimum coins for smaller amounts) and building up the solution using optimal substructure."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "minimize count",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks for the 'fewest number of coins', which is an objective to minimize a count."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Two Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n\nExample 1:\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nOutput: Because nums[0] + nums[1] == 9, we return [0, 1].\n\nExample 2:\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\nExample 3:\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\nConstraints:\n`2 <= nums.length <= 103`\n`-109 <= nums[i] <= 109`\n`-109 <= target <= 109`\nOnly one valid answer exists.",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/two-sum",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "complement lookup",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "hashing",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 15,
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.\n\n\nExample 1:\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\n\nExample 2:\nInput: nums = []\nOutput: []\n\nExample 3:\nInput: nums = [0]\nOutput: []\n\nConstraints:\n`0 <= nums.length <= 3000`\n`-105 <= nums[i] <= 105`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/3sum",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "three indices",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "three sum",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "duplicate detection",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "sorting",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 56,
+    "title": "Merge Intervals",
+    "description": "Given an array of `intervals` where `intervals[i] = [starti, endi]`, merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.\n\n\nExample 1:\nInput: intervals = [[1,3],[2,6],[8,10],[15,18]]\nOutput: [[1,6],[8,10],[15,18]]\nExplanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].\n\n\nExample 2:\nInput: intervals = [[1,4],[4,5]]\nOutput: [[1,5]]\nExplanation: Intervals [1,4] and [4,5] are considered overlapping.\n\n\nConstraints:\n`1 <= intervals.length <= 104`\n`intervals[i].length == 2`\n`0 <= starti <= endi <= 104`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/merge-intervals",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "interval",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "merge intervals",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "greedy",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "sorting",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 102,
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Given the `root` of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).\n\n\nExample 1:\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]\n\nExample 2:\nInput: root = [1]\nOutput: [[1]]\n\nExample 3:\nInput: root = []\nOutput: []\n\nConstraints:\nThe number of nodes in the tree is in the range `[0, 2000]`.\n\n`-1000 <= Node.val <= 1000`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/binary-tree-level-order-traversal",
+    "topics": [
+      {
+        "name": "tree",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "queue",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "binary tree",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [],
+    "techniques": [
+      {
+        "name": "breadth first search",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "tree traversal",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 125,
+    "title": "Valid Palindrome",
+    "description": "Given a string `s`, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.\n\n\nExample 1:\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\nExplanation: \"amanaplanacanalpanama\" is a palindrome.\n\n\nExample 2:\nInput: s = \"race a car\"\nOutput: false\nExplanation: \"raceacar\" is not a palindrome.\n\n\nConstraints:\n`1 <= s.length <= 2 * 105`\n`s` consists only of printable ASCII characters.",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/valid-palindrome",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "palindrome",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "mirror index",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "symmetry",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 300,
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array `nums`, return the length of the longest strictly increasing subsequence.\n\nA subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, `[3,6,2,7]` is a subsequence of the array `[0,3,1,6,2,2,7]`.\n\n\nExample 1:\nInput: nums = [10,9,2,5,3,7,101,18]\nOutput: 4\nExplanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.\n\n\nExample 2:\nInput: nums = [0,1,0,3,2,3]\nOutput: 4\n\nExample 3:\nInput: nums = [7,7,7,7,7,7,7]\nOutput: 1\n\nConstraints:\n`1 <= nums.length <= 2500`\n`-104 <= nums[i] <= 104`\nFollow up:\nCould you come up with the `O(n2)` solution?\nCould you improve it to `O(n log(n))` time complexity?",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-increasing-subsequence",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "subsequence",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "state transition",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "one dimensional dp",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "subsequence dp",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "increasing subsequence",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "binary search",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ]
+  },
+  {
+    "id": 739,
+    "title": "Daily Temperatures",
+    "description": "Given a list of daily temperatures `T`, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature.  If there is no future day for which this is possible, put `0` instead.\n\nFor example, given the list of temperatures `T = [73, 74, 75, 71, 69, 72, 76, 73]`, your output should be `[1, 1, 4, 2, 1, 1, 0, 0]`.\n\nNote:\nThe length of `temperatures` will be in the range `[1, 30000]`.\n\nEach temperature will be an integer in the range `[30, 100]`.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/daily-temperatures",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The problem operates on a given list of daily temperatures, which is an array, and returns another array of waiting days."
+      },
+      {
+        "name": "stack",
+        "confidence": 1.0,
+        "reason": "A stack data structure is central to the efficient solution, used to store indices of temperatures and find the next warmer day."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "next greater element",
+        "confidence": 1.0,
+        "reason": "The core of the problem is to find, for each temperature, the first temperature to its right (future day) that is greater (warmer)."
+      },
+      {
+        "name": "index relationship",
+        "confidence": 1.0,
+        "reason": "The solution relies on the difference between indices (j - i) to represent the number of days to wait for a warmer temperature."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "monotonic stack",
+        "confidence": 1.0,
+        "reason": "The optimal solution uses a stack that maintains indices of temperatures in decreasing order, allowing efficient computation of the 'next warmer temperature' for each element."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 198,
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.\n\nGiven an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.\n\n\nExample 1:\nInput: nums = [1,2,3,1]\nOutput: 4\nExplanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).\n\nTotal amount you can rob = 1 + 3 = 4.\n\n\nExample 2:\nInput: nums = [2,7,9,3,1]\nOutput: 12\nExplanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).\n\nTotal amount you can rob = 2 + 9 + 1 = 12.\n\n\nConstraints:\n`1 <= nums.length <= 100`\n`0 <= nums[i] <= 400`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/house-robber",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The input is an integer array representing the amount of money in each house, and the solution operates on this array."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "adjacent indices",
+        "confidence": 1.0,
+        "reason": "The core constraint of the problem is that 'adjacent houses have security systems connected', which directly involves the relationship between elements at index i and i+1. The DP recurrence also uses indices i-1 and i-2."
+      },
+      {
+        "name": "take or skip",
+        "confidence": 1.0,
+        "reason": "At each house, the algorithm makes a central decision to either 'take' (rob) the current house and skip the previous one, or 'skip' the current house and consider the maximum from the previous one. This choice drives the DP recurrence."
+      },
+      {
+        "name": "one dimensional dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution uses a single index (dp[i]) to represent the maximum amount of money that can be robbed up to house i, making it a one-dimensional DP problem."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The problem exhibits optimal substructure and overlapping subproblems, making dynamic programming the canonical solution where the maximum amount for a house depends on previously computed maximums for prior houses."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks to 'return the maximum amount of money' that can be robbed, which is an objective to maximize a numerical value (sum)."
+      }
+    ]
+  },
+  {
+    "id": 1143,
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings `text1` and `text2`, return the length of their longest common subsequence. If there is no common subsequence, return `0`.\n\nA subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.\n\nFor example, `\"ace\"` is a subsequence of `\"abcde\"`.\n\nA common subsequence of two strings is a subsequence that is common to both strings.\n\n\nExample 1:\nInput: text1 = \"abcde\", text2 = \"ace\" \nOutput: 3  \nExplanation: The longest common subsequence is \"ace\" and its length is 3.\n\n\nExample 2:\nInput: text1 = \"abc\", text2 = \"abc\"\nOutput: 3\nExplanation: The longest common subsequence is \"abc\" and its length is 3.\n\n\nExample 3:\nInput: text1 = \"abc\", text2 = \"def\"\nOutput: 0\nExplanation: There is no such common subsequence, so the result is 0.\n\n\nConstraints:\n`1 <= text1.length, text2.length <= 1000`\n`text1` and `text2` consist of only lowercase English characters.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-common-subsequence",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem operates on two input strings, and character-level operations are central to the solution."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "longest common subsequence",
+        "confidence": 1.0,
+        "reason": "The problem directly asks for the longest common subsequence between two strings."
+      },
+      {
+        "name": "subsequence of string",
+        "confidence": 1.0,
+        "reason": "The core of the problem involves identifying subsequences of strings where characters are deleted without changing relative order."
+      },
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution typically uses two indices (i and j) to iterate through both input strings and compare characters."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The canonical solution solves the problem by defining states for subproblems (LCS of prefixes) and reusing solutions to overlapping subproblems through memoization or tabulation."
+      },
+      {
+        "name": "two dimensional dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution uses a two-dimensional table (dp[i][j]) to store the lengths of common subsequences for all prefixes of the two input strings."
+      },
+      {
+        "name": "subsequence dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming states represent properties of subsequences (specifically, the length of the longest common subsequence of string prefixes)."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "The objective is to find the maximum possible length of a common subsequence, which is a numerical value being maximized."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\n\n\nExample 1:\nInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\n\n\nExample 2:\nInput: l1 = [0], l2 = [0]\nOutput: [0]\n\nExample 3:\nInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n\nConstraints:\nThe number of nodes in each linked list is in the range `[1, 100]`.\n\n`0 <= Node.val <= 9`\nIt is guaranteed that the list represents a number that does not have leading zeros.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/add-two-numbers",
+    "topics": [
+      {
+        "name": "linked list",
+        "confidence": 1.0,
+        "reason": "The problem explicitly involves processing and constructing linked lists representing numbers."
+      },
+      {
+        "name": "mathematics",
+        "confidence": 1.0,
+        "reason": "The core of the problem is adding two numbers, involving digit-by-digit arithmetic and handling carries."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "Two pointers are used to traverse the two input linked lists simultaneously, and a third pointer builds the result list."
+      },
+      {
+        "name": "modular arithmetic",
+        "confidence": 1.0,
+        "reason": "The calculation of the current digit (sum % 10) and the carry (sum / 10) directly uses properties of remainders and modulo operations."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "recursion",
+        "confidence": 1.0,
+        "reason": "The problem can be solved naturally using recursion, where the function calls itself for the next pair of nodes and passes along the carry."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 3,
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string `s`, find the length of the longest substring without repeating characters.\n\n\nExample 1:\nInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3.\n\n\nExample 2:\nInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n\n\nExample 3:\nInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\n\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n\n\nExample 4:\nInput: s = \"\"\nOutput: 0\n\nConstraints:\n`0 <= s.length <= 5 * 104`\n`s` consists of English letters, digits, symbols and spaces.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem operates on a string, and character-level operations are central to finding the substring."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "substring",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks for the longest 'substring', which is a contiguous portion of the input string."
+      },
+      {
+        "name": "sliding window",
+        "confidence": 1.0,
+        "reason": "The canonical solution uses a dynamically expanding and shrinking window (defined by left and right pointers) to maintain the condition of no repeating characters."
+      },
+      {
+        "name": "duplicate detection",
+        "confidence": 1.0,
+        "reason": "The core logic of the solution involves efficiently detecting whether a character already exists within the current window to ensure no repeating characters."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "Two pointers (left and right) are used to define the boundaries of the sliding window and advance through the string."
+      },
+      {
+        "name": "hashing",
+        "confidence": 1.0,
+        "reason": "A hash set (or hash map) is used to store characters currently in the window, enabling O(1) average time complexity for duplicate detection and removal."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "The problem asks to find the 'longest' substring, which means maximizing the numerical length of the valid substring."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays.\n\n\nExample 1:\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\n\nExample 2:\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n\nExample 3:\nInput: nums1 = [0,0], nums2 = [0,0]\nOutput: 0.00000\n\nExample 4:\nInput: nums1 = [], nums2 = [1]\nOutput: 1.00000\n\nExample 5:\nInput: nums1 = [2], nums2 = []\nOutput: 2.00000\n\nConstraints:\n`nums1.length == m`\n`nums2.length == n`\n`0 <= m <= 1000`\n`0 <= n <= 1000`\n`1 <= m + n <= 2000`\n`-106 <= nums1[i], nums2[i] <= 106`\nFollow up: The overall run time complexity should be `O(log (m+n))`.",
+    "difficulty": "Hard",
+    "url": "https://leetcode.com/problems/median-of-two-sorted-arrays",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The problem takes two arrays as input, and array operations are central to the solution."
+      },
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "The input arrays are explicitly stated to be sorted, and this property is fundamental to the O(log(m+n)) solution which relies on comparing elements from sorted sequences."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "two indices",
+        "confidence": 0.9,
+        "reason": "The O(log(m+n)) solution involves finding two partition points (indices), one in each array, to correctly divide elements and identify the k-th smallest element."
+      },
+      {
+        "name": "index relationship",
+        "confidence": 0.9,
+        "reason": "The solution critically depends on the mathematical relationship between the two partition indices (i and j), specifically that their sum determines the total count of elements on one side (i+j=k) and cross-array comparisons using these indices are made."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "binary search",
+        "confidence": 1.0,
+        "reason": "The O(log(m+n)) time complexity constraint is met by a binary search approach that repeatedly halves the search space for the correct partition points in the sorted arrays."
+      },
+      {
+        "name": "divide and conquer",
+        "confidence": 1.0,
+        "reason": "The canonical O(log(m+n)) solution recursively solves the problem of finding the k-th smallest element by breaking it down into smaller subproblems and eliminating a portion of one array, which is a characteristic of divide and conquer."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 6,
+    "title": "ZigZag Conversion",
+    "description": "The string `\"PAYPALISHIRING\"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\nP   A   H   N\nA P L S I I G\nY   I   R\nAnd then read line by line: `\"PAHNAPLSIIGYIR\"`\nWrite the code that will take a string and make this conversion given a number of rows:\nstring convert(string s, int numRows);\n\nExample 1:\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\n\nExample 2:\nInput: s = \"PAYPALISHIRING\", numRows = 4\nOutput: \"PINALSIGYAHRPI\"\nExplanation:\nP     I    N\nA   L S  I G\nY A   H R\nP     I\n\nExample 3:\nInput: s = \"A\", numRows = 1\nOutput: \"A\"\n\nConstraints:\n`1 <= s.length <= 1000`\n`s` consists of English letters (lower-case and upper-case), `','` and `'.'`.\n\n`1 <= numRows <= 1000`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/zigzag-conversion",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem takes a string as input, manipulates its characters according to a pattern, and produces a new string as output. Character-level operations are central."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "index relationship",
+        "confidence": 0.9,
+        "reason": "The solution relies on a mathematical relationship between the index of a character in the original string and its corresponding row in the zigzag pattern, which determines its final position."
+      },
+      {
+        "name": "cyclic pattern",
+        "confidence": 1.0,
+        "reason": "The movement of characters through the rows (downwards, then upwards) follows a repeating, cyclic pattern, where the row index repeatedly traverses from 0 to numRows-1 and back."
+      }
+    ],
+    "techniques": [],
+    "objectives": []
+  },
+  {
+    "id": 7,
+    "title": "Reverse Integer",
+    "description": "Given a signed 32-bit integer `x`, return `x` with its digits reversed. If reversing `x` causes the value to go outside the signed 32-bit integer range `[-231, 231 - 1]`, then return `0`.\n\nAssume the environment does not allow you to store 64-bit integers (signed or unsigned).\n\n\nExample 1:\nInput: x = 123\nOutput: 321\n\nExample 2:\nInput: x = -123\nOutput: -321\n\nExample 3:\nInput: x = 120\nOutput: 21\n\nExample 4:\nInput: x = 0\nOutput: 0\n\nConstraints:\n`-231 <= x <= 231 - 1`",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/reverse-integer",
+    "topics": [
+      {
+        "name": "mathematics",
+        "confidence": 1.0,
+        "reason": "The problem is solved using fundamental arithmetic operations (modulo, division, multiplication, addition) to manipulate digits and explicitly handle integer overflow based on mathematical limits."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "modular arithmetic",
+        "confidence": 1.0,
+        "reason": "The solution relies on modulo operations (x % 10) to extract digits and multiplication/addition (reversed * 10 + digit) to reconstruct the reversed integer, which are core concepts of modular and base-10 arithmetic."
+      }
+    ],
+    "techniques": [],
+    "objectives": []
+  },
+  {
+    "id": 8,
+    "title": "String to Integer (atoi)",
+    "description": "Implement the `myAtoi(string s)` function, which converts a string to a 32-bit signed integer (similar to C/C++'s `atoi` function).\n\nThe algorithm for `myAtoi(string s)` is as follows:\nRead in and ignore any leading whitespace.\n\nCheck if the next character (if not already at the end of the string) is `'-'` or `'+'`. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.\n\nRead in next the characters until the next non-digit charcter or the end of the input is reached. The rest of the string is ignored.\n\nConvert these digits into an integer (i.e. `\"123\" -> 123`, `\"0032\" -> 32`). If no digits were read, then the integer is `0`. Change the sign as necessary (from step 2).\n\nIf the integer is out of the 32-bit signed integer range `[-231, 231 - 1]`, then clamp the integer so that it remains in the range. Specifically, integers less than `-231` should be clamped to `-231`, and integers greater than `231 - 1` should be clamped to `231 - 1`.\n\nReturn the integer as the final result.\n\nNote:\nOnly the space character `' '` is considered a whitespace character.\n\nDo not ignore any characters other than the leading whitespace or the rest of the string after the digits.\n\n\nExample 1:\nInput: s = \"42\"\nOutput: 42\nExplanation: The underlined characters are what is read in, the caret is the current reader position.\n\nStep 1: \"42\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"42\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"42\" (\"42\" is read in)\n           ^\nThe parsed integer is 42.\n\nSince 42 is in the range [-231, 231 - 1], the final result is 42.\n\n\nExample 2:\nInput: s = \"   -42\"\nOutput: -42\nExplanation:\nStep 1: \"   -42\" (leading whitespace is read and ignored)\n            ^\nStep 2: \"   -42\" ('-' is read, so the result should be negative)\n             ^\nStep 3: \"   -42\" (\"42\" is read in)\n               ^\nThe parsed integer is -42.\n\nSince -42 is in the range [-231, 231 - 1], the final result is -42.\n\n\nExample 3:\nInput: s = \"4193 with words\"\nOutput: 4193\nExplanation:\nStep 1: \"4193 with words\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"4193 with words\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"4193 with words\" (\"4193\" is read in; reading stops because the next character is a non-digit)\n             ^\nThe parsed integer is 4193.\n\nSince 4193 is in the range [-231, 231 - 1], the final result is 4193.\n\n\nExample 4:\nInput: s = \"words and 987\"\nOutput: 0\nExplanation:\nStep 1: \"words and 987\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"words and 987\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"words and 987\" (reading stops immediately because there is a non-digit 'w')\n         ^\nThe parsed integer is 0 because no digits were read.\n\nSince 0 is in the range [-231, 231 - 1], the final result is 0.\n\n\nExample 5:\nInput: s = \"-91283472332\"\nOutput: -2147483648\nExplanation:\nStep 1: \"-91283472332\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"-91283472332\" ('-' is read, so the result should be negative)\n          ^\nStep 3: \"-91283472332\" (\"91283472332\" is read in)\n                     ^\nThe parsed integer is -91283472332.\n\nSince -91283472332 is less than the lower bound of the range [-231, 231 - 1], the final result is clamped to -231 = -2147483648. \n\nConstraints:\n`0 <= s.length <= 200`\n`s` consists of English letters (lower-case and upper-case), digits (`0-9`), `' '`, `'+'`, `'-'`, and `'.'`.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/string-to-integer-atoi",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem's input is a string, and the solution involves character-level processing such as iterating through characters, checking their types (whitespace, sign, digit), and parsing them."
+      },
+      {
+        "name": "mathematics",
+        "confidence": 1.0,
+        "reason": "The solution heavily relies on arithmetic operations for converting digit characters to a numerical value, applying a sign, and crucially, handling integer overflow by checking against `INT_MAX` and `INT_MIN` and clamping the result within a specified 32-bit signed integer range."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "prefix",
+        "confidence": 1.0,
+        "reason": "The algorithm processes the input string sequentially from the beginning, handling leading whitespace, an optional sign, and then a sequence of digits. This involves reasoning about and processing contiguous segments starting from the first character."
+      }
+    ],
+    "techniques": [],
+    "objectives": []
+  },
+  {
+    "id": 9,
+    "title": "Palindrome Number",
+    "description": "Given an integer `x`, return `true` if `x` is palindrome integer.\n\nAn integer is a palindrome when it reads the same backward as forward. For example, `121` is palindrome while `123` is not.\n\n\nExample 1:\nInput: x = 121\nOutput: true\n\nExample 2:\nInput: x = -121\nOutput: false\nExplanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n\n\nExample 3:\nInput: x = 10\nOutput: false\nExplanation: Reads 01 from right to left. Therefore it is not a palindrome.\n\n\nExample 4:\nInput: x = -101\nOutput: false\n\nConstraints:\n`-231 <= x <= 231 - 1`\nFollow up: Could you solve it without converting the integer to a string?",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/palindrome-number",
+    "topics": [
+      {
+        "name": "mathematics",
+        "confidence": 1.0,
+        "reason": "The most efficient solution involves numerical manipulations (modulo and division) to extract and reconstruct digits of the integer, relying on arithmetic properties."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "palindrome",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks to determine if a given integer is a palindrome, meaning it reads the same forwards and backwards."
+      },
+      {
+        "name": "mirror index",
+        "confidence": 1.0,
+        "reason": "The solution implicitly compares digits from the beginning of the number with digits from its end (via number reversal or digit extraction), which is a conceptual application of mirror-index comparison."
+      },
+      {
+        "name": "symmetry",
+        "confidence": 0.9,
+        "reason": "Palindrome numbers inherently exhibit structural symmetry, where their digits are mirrored. The solution exploits this reflectional property."
+      }
+    ],
+    "techniques": [],
+    "objectives": []
+  },
+  {
+    "id": 10,
+    "title": "Regular Expression Matching",
+    "description": "Given an input string (`s`) and a pattern (`p`), implement regular expression matching with support for `'.'` and `'*'` where:` `\n`'.'` Matches any single character.â€‹â€‹â€‹â€‹\n`'*'` Matches zero or more of the preceding element.\n\nThe matching should cover the entire input string (not partial).\n\n\nExample 1:\nInput: s = \"aa\", p = \"a\"\nOutput: false\nExplanation: \"a\" does not match the entire string \"aa\".\n\n\nExample 2:\nInput: s = \"aa\", p = \"a*\"\nOutput: true\nExplanation: '*' means zero or more of the preceding element, 'a'. Therefore, by repeating 'a' once, it becomes \"aa\".\n\n\nExample 3:\nInput: s = \"ab\", p = \".*\"\nOutput: true\nExplanation: \".*\" means \"zero or more (*) of any character (.)\".\n\n\nExample 4:\nInput: s = \"aab\", p = \"c*a*b\"\nOutput: true\nExplanation: c can be repeated 0 times, a can be repeated 1 time. Therefore, it matches \"aab\".\n\n\nExample 5:\nInput: s = \"mississippi\", p = \"mis*is*p*.\"\nOutput: false\n\nConstraints:\n`0 <= s.length <= 20`\n`0 <= p.length <= 30`\n`s` contains only lowercase English letters.\n\n`p` contains only lowercase English letters, `'.'`, and `'*'`.\n\nIt is guaranteed for each appearance of the character `'*'`, there will be a previous valid character to match.",
+    "difficulty": "Hard",
+    "url": "https://leetcode.com/problems/regular-expression-matching",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem operates on two input sequences of characters, `s` and `p`, which are strings. Character-level comparisons and manipulations are central to the solution."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "two dimensional dp",
+        "confidence": 1.0,
+        "reason": "The canonical dynamic programming solution uses a two-dimensional table, `dp[i][j]`, to store whether the prefix `s[0...i-1]` matches the prefix `p[0...j-1]`."
+      },
+      {
+        "name": "state transition",
+        "confidence": 0.9,
+        "reason": "The core of the dynamic programming solution involves distinct and characteristic state transition rules, especially for the wildcard character `*` which allows matching zero or more of the preceding element, leading to complex transitions that are a meaningful searchable characteristic."
+      },
+      {
+        "name": "take or skip",
+        "confidence": 0.9,
+        "reason": "When encountering the `*` character in the pattern, the solution makes a decision to either 'skip' the preceding element (matching zero times) or 'take' the preceding element (matching one or more times), which is a central decision pattern."
+      },
+      {
+        "name": "prefix matching",
+        "confidence": 0.9,
+        "reason": "The dynamic programming solution iteratively builds matches for prefixes of the input string `s` against prefixes of the pattern `p`. The final answer is determined by whether the full prefix (the entire string) matches the full pattern."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The problem can be efficiently solved by breaking it down into overlapping subproblems and storing the results in a table to avoid redundant computations, which is the definition of dynamic programming."
+      },
+      {
+        "name": "recursion",
+        "confidence": 0.9,
+        "reason": "The problem lends itself naturally to a recursive definition, particularly when handling the `.` and `*` characters. A common approach involves a recursive function with memoization, making recursion central to the intended solution."
+      },
+      {
+        "name": "backtracking",
+        "confidence": 0.8,
+        "reason": "The nature of regular expression matching, especially with `*`, involves exploring different possibilities (e.g., `*` matching zero, one, or multiple times). A recursive solution explores these choices and can revert if a path doesn't lead to a match, which is a form of backtracking. When combined with memoization, it becomes dynamic programming."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "reachability",
+        "confidence": 1.0,
+        "reason": "The problem asks a boolean question: 'does the input string `s` match the pattern `p`?', which is fundamentally a question of whether a matching state can be reached."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Container With Most Water",
+    "description": "Given `n` non-negative integers `a1, a2, ..., an` , where each represents a point at coordinate `(i, ai)`. `n` vertical lines are drawn such that the two endpoints of the line `i` is at `(i, ai)` and `(i, 0)`. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.\n\nNotice that you may not slant the container.\n\n\nExample 1:\nInput: height = [1,8,6,2,5,4,8,3,7]\nOutput: 49\nExplanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.\n\n\nExample 2:\nInput: height = [1,1]\nOutput: 1\n\nExample 3:\nInput: height = [4,3,2,1,4]\nOutput: 16\n\nExample 4:\nInput: height = [1,2,1]\nOutput: 2\n\nConstraints:\n`n == height.length`\n`2 <= n <= 105`\n`0 <= height[i] <= 104`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/container-with-most-water",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The problem operates on a given array of non-negative integers representing heights."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "The core of the problem is to select two indices (lines) from the array to form a container."
+      },
+      {
+        "name": "index distance",
+        "confidence": 1.0,
+        "reason": "The width of the container, calculated as `j - i`, is explicitly the distance between the two chosen indices and is central to the area calculation."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "The canonical and most efficient solution uses two pointers, one starting from the left and one from the right, moving inwards."
+      },
+      {
+        "name": "greedy",
+        "confidence": 1.0,
+        "reason": "The solution makes a locally optimal choice at each step by moving the pointer corresponding to the shorter line, with the aim of achieving the globally maximum area."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks to find the container that holds 'the most water', which means maximizing the calculated area value."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Integer to Roman",
+    "description": "Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, `2` is written as `II` in Roman numeral, just two one's added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:\n`I` can be placed before `V` (5) and `X` (10) to make 4 and 9. \n`X` can be placed before `L` (50) and `C` (100) to make 40 and 90. \n`C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.\n\nGiven an integer, convert it to a roman numeral.\n\n\nExample 1:\nInput: num = 3\nOutput: \"III\"\n\nExample 2:\nInput: num = 4\nOutput: \"IV\"\n\nExample 3:\nInput: num = 9\nOutput: \"IX\"\n\nExample 4:\nInput: num = 58\nOutput: \"LVIII\"\nExplanation: L = 50, V = 5, III = 3.\n\n\nExample 5:\nInput: num = 1994\nOutput: \"MCMXCIV\"\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n\nConstraints:\n`1 <= num <= 3999`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/integer-to-roman",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem requires constructing and returning a string representation of a Roman numeral."
+      },
+      {
+        "name": "mathematics",
+        "confidence": 1.0,
+        "reason": "The core of the problem involves converting an integer to a different numerical representation system based on specific mathematical rules and values."
+      }
+    ],
+    "patterns": [],
+    "techniques": [
+      {
+        "name": "greedy",
+        "confidence": 1.0,
+        "reason": "The standard solution repeatedly makes the locally optimal choice of appending the largest possible Roman numeral symbol(s) for the current remaining integer value until the number becomes zero."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 13,
+    "title": "Roman to Integer",
+    "description": "Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, `2` is written as `II` in Roman numeral, just two one's added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:\n`I` can be placed before `V` (5) and `X` (10) to make 4 and 9. \n`X` can be placed before `L` (50) and `C` (100) to make 40 and 90. \n`C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n\nExample 1:\nInput: s = \"III\"\nOutput: 3\n\nExample 2:\nInput: s = \"IV\"\nOutput: 4\n\nExample 3:\nInput: s = \"IX\"\nOutput: 9\n\nExample 4:\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n\n\nExample 5:\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n\nConstraints:\n`1 <= s.length <= 15`\n`s` contains only the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.\n\nIt is guaranteed that `s` is a valid roman numeral in the range `[1, 3999]`.",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/roman-to-integer",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem input is a Roman numeral represented as a string, and the solution involves iterating through its characters and performing character-level operations."
+      },
+      {
+        "name": "mathematics",
+        "confidence": 1.0,
+        "reason": "The core of the problem involves basic arithmetic operations (addition and subtraction) to convert the Roman numeral representation to its integer value based on specific mathematical rules."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "adjacent indices",
+        "confidence": 1.0,
+        "reason": "The solution's logic for handling subtractive cases (e.g., 'IV', 'IX') critically depends on comparing the value of the current character at index `i` with the value of the next character at `i+1`."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "hashing",
+        "confidence": 1.0,
+        "reason": "A hash map (or dictionary) is commonly used to efficiently store and retrieve the integer value corresponding to each Roman numeral symbol."
+      },
+      {
+        "name": "greedy",
+        "confidence": 1.0,
+        "reason": "The problem can be solved by processing the Roman numeral from left to right (or right to left) and making a locally optimal decision at each step (add or subtract the current character's value based on the next character) that leads to the globally correct integer sum."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 16,
+    "title": "3Sum Closest",
+    "description": "Given an array `nums` of n integers and an integer `target`, find three integers in `nums` such that the sum is closest to `target`. Return the sum of the three integers. You may assume that each input would have exactly one solution.\n\n\nExample 1:\nInput: nums = [-1,2,1,-4], target = 1\nOutput: 2\nExplanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).\n\n\nConstraints:\n`3 <= nums.length <= 10^3`\n`-10^3 <= nums[i] <= 10^3`\n`-10^4 <= target <= 10^4`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/3sum-closest",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The problem's primary input is an array of integers, and array operations are central to the solution."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "three indices",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks to find three distinct integers, which involves reasoning about three indices."
+      },
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "The canonical efficient solution involves sorting the input array, and its ordered property is crucial for the two-pointer technique."
+      },
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "After sorting, the solution uses two pointers (left and right) to efficiently search for the remaining two numbers that form the closest sum."
+      },
+      {
+        "name": "three sum",
+        "confidence": 1.0,
+        "reason": "The problem is a direct variation of the classic '3Sum' problem, requiring finding three elements that satisfy a sum condition (in this case, closest to a target)."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "sorting",
+        "confidence": 1.0,
+        "reason": "Sorting the input array is a necessary first step for the efficient two-pointer approach to find the three integers."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "minimize value",
+        "confidence": 1.0,
+        "reason": "The goal is to find a sum that is 'closest to target', which translates to minimizing the absolute difference between the sum and the target."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n\nExample 1:\nInput: digits = \"23\"\nOutput: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\nInput: digits = \"\"\nOutput: []\n\nExample 3:\nInput: digits = \"2\"\nOutput: [\"a\",\"b\",\"c\"]\n\nConstraints:\n`0 <= digits.length <= 4`\n`digits[i]` is a digit in the range `['2', '9']`.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The input is a string of digits, and the output is a list of strings formed by concatenating characters. String building and manipulation are central to the problem."
+      }
+    ],
+    "patterns": [],
+    "techniques": [
+      {
+        "name": "backtracking",
+        "confidence": 1.0,
+        "reason": "The solution explores all possible letter choices for each digit by incrementally building a combination and reverting choices to explore other paths in a decision tree."
+      },
+      {
+        "name": "depth first search",
+        "confidence": 1.0,
+        "reason": "The backtracking solution inherently explores the decision tree of letter choices by traversing one branch as deeply as possible to form a complete combination before exploring sibling branches, characteristic of DFS."
+      },
+      {
+        "name": "recursion",
+        "confidence": 1.0,
+        "reason": "The canonical solution constructs combinations by making a choice for the current digit and then recursively calling itself to build the rest of the combination for the remaining digits, making recursion central to the algorithm."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 18,
+    "title": "4Sum",
+    "description": "Given an array `nums` of n integers and an integer `target`, are there elements a, b, c, and d in `nums` such that a + b + c + d = `target`? Find all unique quadruplets in the array which gives the sum of `target`.\n\nNotice that the solution set must not contain duplicate quadruplets.\n\n\nExample 1:\nInput: nums = [1,0,-1,0,-2,2], target = 0\nOutput: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]\n\nExample 2:\nInput: nums = [], target = 0\nOutput: []\n\nConstraints:\n`0 <= nums.length <= 200`\n`-109 <= nums[i] <= 109`\n`-109 <= target <= 109`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/4sum",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The problem operates on a given array of integers `nums`."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "The canonical solution requires sorting the input array to efficiently find quadruplets and handle duplicates."
+      },
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "The solution involves selecting multiple pairs of indices, specifically for `i`, `j`, and then `left`, `right` pointers."
+      },
+      {
+        "name": "duplicate detection",
+        "confidence": 1.0,
+        "reason": "The problem explicitly requires finding 'unique quadruplets', necessitating logic to skip duplicate elements."
+      },
+      {
+        "name": "complement lookup",
+        "confidence": 1.0,
+        "reason": "After fixing two elements, the two-pointer approach searches for a pair whose sum complements the fixed elements to reach the target."
+      },
+      {
+        "name": "index relationship",
+        "confidence": 1.0,
+        "reason": "The solution relies on maintaining a specific order and relationship between the four indices (i, j, left, right) for correctness and efficiency."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "sorting",
+        "confidence": 1.0,
+        "reason": "Sorting the input array is a fundamental first step to enable the two-pointer technique and simplify duplicate handling."
+      },
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "After fixing two outer elements, the problem is reduced to a 2-Sum variant solved efficiently by moving two pointers inwards on a sorted subarray."
+      }
+    ],
+    "objectives": []
+  }
+]

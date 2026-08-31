@@ -1,0 +1,445 @@
+[
+  {
+    "id": 322,
+    "title": "Coin Change",
+    "description": "You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.\n\nReturn the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`.\n\nYou may assume that you have an infinite number of each kind of coin.\n\n\nExample 1:\nInput: coins = [1,2,5], amount = 11\nOutput: 3\nExplanation: 11 = 5 + 5 + 1\n\nExample 2:\nInput: coins = [2], amount = 3\nOutput: -1\n\nExample 3:\nInput: coins = [1], amount = 0\nOutput: 0\n\nExample 4:\nInput: coins = [1], amount = 1\nOutput: 1\n\nExample 5:\nInput: coins = [1], amount = 2\nOutput: 2\n\nConstraints:\n`1 <= coins.length <= 12`\n`1 <= coins[i] <= 231 - 1`\n`0 <= amount <= 104`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/coin-change",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The input `coins` is an integer array, and the solution iterates through its elements."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "one dimensional dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution uses a state `dp[i]` representing the minimum coins for amount `i`, making it a one-dimensional DP."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The problem is solved by breaking it into overlapping subproblems (minimum coins for smaller amounts) and building up the solution using optimal substructure."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "minimize count",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks for the 'fewest number of coins', which is an objective to minimize a count."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Two Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n\nExample 1:\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nOutput: Because nums[0] + nums[1] == 9, we return [0, 1].\n\nExample 2:\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\nExample 3:\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\nConstraints:\n`2 <= nums.length <= 103`\n`-109 <= nums[i] <= 109`\n`-109 <= target <= 109`\nOnly one valid answer exists.",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/two-sum",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "complement lookup",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "hashing",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 15,
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.\n\n\nExample 1:\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\n\nExample 2:\nInput: nums = []\nOutput: []\n\nExample 3:\nInput: nums = [0]\nOutput: []\n\nConstraints:\n`0 <= nums.length <= 3000`\n`-105 <= nums[i] <= 105`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/3sum",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "three indices",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "three sum",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "duplicate detection",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "sorting",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 56,
+    "title": "Merge Intervals",
+    "description": "Given an array of `intervals` where `intervals[i] = [starti, endi]`, merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.\n\n\nExample 1:\nInput: intervals = [[1,3],[2,6],[8,10],[15,18]]\nOutput: [[1,6],[8,10],[15,18]]\nExplanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].\n\n\nExample 2:\nInput: intervals = [[1,4],[4,5]]\nOutput: [[1,5]]\nExplanation: Intervals [1,4] and [4,5] are considered overlapping.\n\n\nConstraints:\n`1 <= intervals.length <= 104`\n`intervals[i].length == 2`\n`0 <= starti <= endi <= 104`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/merge-intervals",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "interval",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "merge intervals",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "sorted array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "greedy",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "sorting",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 102,
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Given the `root` of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).\n\n\nExample 1:\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]\n\nExample 2:\nInput: root = [1]\nOutput: [[1]]\n\nExample 3:\nInput: root = []\nOutput: []\n\nConstraints:\nThe number of nodes in the tree is in the range `[0, 2000]`.\n\n`-1000 <= Node.val <= 1000`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/binary-tree-level-order-traversal",
+    "topics": [
+      {
+        "name": "tree",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "queue",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "binary tree",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [],
+    "techniques": [
+      {
+        "name": "breadth first search",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "tree traversal",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 125,
+    "title": "Valid Palindrome",
+    "description": "Given a string `s`, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.\n\n\nExample 1:\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\nExplanation: \"amanaplanacanalpanama\" is a palindrome.\n\n\nExample 2:\nInput: s = \"race a car\"\nOutput: false\nExplanation: \"raceacar\" is not a palindrome.\n\n\nConstraints:\n`1 <= s.length <= 2 * 105`\n`s` consists only of printable ASCII characters.",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/valid-palindrome",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "palindrome",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "mirror index",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "symmetry",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "two pointers",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 300,
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array `nums`, return the length of the longest strictly increasing subsequence.\n\nA subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, `[3,6,2,7]` is a subsequence of the array `[0,3,1,6,2,2,7]`.\n\n\nExample 1:\nInput: nums = [10,9,2,5,3,7,101,18]\nOutput: 4\nExplanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.\n\n\nExample 2:\nInput: nums = [0,1,0,3,2,3]\nOutput: 4\n\nExample 3:\nInput: nums = [7,7,7,7,7,7,7]\nOutput: 1\n\nConstraints:\n`1 <= nums.length <= 2500`\n`-104 <= nums[i] <= 104`\nFollow up:\nCould you come up with the `O(n2)` solution?\nCould you improve it to `O(n log(n))` time complexity?",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-increasing-subsequence",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "subsequence",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "state transition",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "one dimensional dp",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "subsequence dp",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "increasing subsequence",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      },
+      {
+        "name": "binary search",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "Restored from previous classification."
+      }
+    ]
+  },
+  {
+    "id": 739,
+    "title": "Daily Temperatures",
+    "description": "Given a list of daily temperatures `T`, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature.  If there is no future day for which this is possible, put `0` instead.\n\nFor example, given the list of temperatures `T = [73, 74, 75, 71, 69, 72, 76, 73]`, your output should be `[1, 1, 4, 2, 1, 1, 0, 0]`.\n\nNote:\nThe length of `temperatures` will be in the range `[1, 30000]`.\n\nEach temperature will be an integer in the range `[30, 100]`.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/daily-temperatures",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The problem operates on a given list of daily temperatures, which is an array, and returns another array of waiting days."
+      },
+      {
+        "name": "stack",
+        "confidence": 1.0,
+        "reason": "A stack data structure is central to the efficient solution, used to store indices of temperatures and find the next warmer day."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "next greater element",
+        "confidence": 1.0,
+        "reason": "The core of the problem is to find, for each temperature, the first temperature to its right (future day) that is greater (warmer)."
+      },
+      {
+        "name": "index relationship",
+        "confidence": 1.0,
+        "reason": "The solution relies on the difference between indices (j - i) to represent the number of days to wait for a warmer temperature."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "monotonic stack",
+        "confidence": 1.0,
+        "reason": "The optimal solution uses a stack that maintains indices of temperatures in decreasing order, allowing efficient computation of the 'next warmer temperature' for each element."
+      }
+    ],
+    "objectives": []
+  },
+  {
+    "id": 198,
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.\n\nGiven an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.\n\n\nExample 1:\nInput: nums = [1,2,3,1]\nOutput: 4\nExplanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).\n\nTotal amount you can rob = 1 + 3 = 4.\n\n\nExample 2:\nInput: nums = [2,7,9,3,1]\nOutput: 12\nExplanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).\n\nTotal amount you can rob = 2 + 9 + 1 = 12.\n\n\nConstraints:\n`1 <= nums.length <= 100`\n`0 <= nums[i] <= 400`",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/house-robber",
+    "topics": [
+      {
+        "name": "array",
+        "confidence": 1.0,
+        "reason": "The input is an integer array representing the amount of money in each house, and the solution operates on this array."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "adjacent indices",
+        "confidence": 1.0,
+        "reason": "The core constraint of the problem is that 'adjacent houses have security systems connected', which directly involves the relationship between elements at index i and i+1. The DP recurrence also uses indices i-1 and i-2."
+      },
+      {
+        "name": "take or skip",
+        "confidence": 1.0,
+        "reason": "At each house, the algorithm makes a central decision to either 'take' (rob) the current house and skip the previous one, or 'skip' the current house and consider the maximum from the previous one. This choice drives the DP recurrence."
+      },
+      {
+        "name": "one dimensional dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution uses a single index (dp[i]) to represent the maximum amount of money that can be robbed up to house i, making it a one-dimensional DP problem."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The problem exhibits optimal substructure and overlapping subproblems, making dynamic programming the canonical solution where the maximum amount for a house depends on previously computed maximums for prior houses."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "The problem explicitly asks to 'return the maximum amount of money' that can be robbed, which is an objective to maximize a numerical value (sum)."
+      }
+    ]
+  },
+  {
+    "id": 1143,
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings `text1` and `text2`, return the length of their longest common subsequence. If there is no common subsequence, return `0`.\n\nA subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.\n\nFor example, `\"ace\"` is a subsequence of `\"abcde\"`.\n\nA common subsequence of two strings is a subsequence that is common to both strings.\n\n\nExample 1:\nInput: text1 = \"abcde\", text2 = \"ace\" \nOutput: 3  \nExplanation: The longest common subsequence is \"ace\" and its length is 3.\n\n\nExample 2:\nInput: text1 = \"abc\", text2 = \"abc\"\nOutput: 3\nExplanation: The longest common subsequence is \"abc\" and its length is 3.\n\n\nExample 3:\nInput: text1 = \"abc\", text2 = \"def\"\nOutput: 0\nExplanation: There is no such common subsequence, so the result is 0.\n\n\nConstraints:\n`1 <= text1.length, text2.length <= 1000`\n`text1` and `text2` consist of only lowercase English characters.",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-common-subsequence",
+    "topics": [
+      {
+        "name": "string",
+        "confidence": 1.0,
+        "reason": "The problem operates on two input strings, and character-level operations are central to the solution."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "longest common subsequence",
+        "confidence": 1.0,
+        "reason": "The problem directly asks for the longest common subsequence between two strings."
+      },
+      {
+        "name": "subsequence of string",
+        "confidence": 1.0,
+        "reason": "The core of the problem involves identifying subsequences of strings where characters are deleted without changing relative order."
+      },
+      {
+        "name": "two indices",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution typically uses two indices (i and j) to iterate through both input strings and compare characters."
+      }
+    ],
+    "techniques": [
+      {
+        "name": "dynamic programming",
+        "confidence": 1.0,
+        "reason": "The canonical solution solves the problem by defining states for subproblems (LCS of prefixes) and reusing solutions to overlapping subproblems through memoization or tabulation."
+      },
+      {
+        "name": "two dimensional dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming solution uses a two-dimensional table (dp[i][j]) to store the lengths of common subsequences for all prefixes of the two input strings."
+      },
+      {
+        "name": "subsequence dp",
+        "confidence": 1.0,
+        "reason": "The dynamic programming states represent properties of subsequences (specifically, the length of the longest common subsequence of string prefixes)."
+      }
+    ],
+    "objectives": [
+      {
+        "name": "maximize value",
+        "confidence": 1.0,
+        "reason": "The objective is to find the maximum possible length of a common subsequence, which is a numerical value being maximized."
+      }
+    ]
+  }
+]

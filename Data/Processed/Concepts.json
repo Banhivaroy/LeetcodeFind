@@ -1,0 +1,1845 @@
+[
+  {
+    "name": "array",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems where the primary data structure is an indexed collection of values.",
+    "aliases": ["arrays", "integer array", "numeric array", "list of numbers"],
+    "examples": [
+      "nums[i]",
+      "iterate through an array",
+      "find an element in an array"
+    ],
+    "related_topics": [
+      "subarray",
+      "subsequence",
+      "index relationship",
+      "two pointers"
+    ],
+    "include_when": [
+      "The problem primarily operates on an array.",
+      "The input contains an indexed sequence of values and array operations are central to the solution."
+    ]
+  },
+  {
+    "name": "string",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems where the primary data structure is a sequence of characters.",
+    "aliases": ["strings", "text", "character sequence"],
+    "examples": ["s[i]", "compare characters", "process a string"],
+    "related_topics": [
+      "substring",
+      "subsequence of string",
+      "palindrome",
+      "frequency counting"
+    ],
+    "include_when": [
+      "The problem primarily operates on strings or sequences of characters.",
+      "Character-level operations are central to solving the problem."
+    ]
+  },
+  {
+    "name": "linked list",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems involving nodes connected through next or previous references.",
+    "aliases": ["linkedlist", "singly linked list", "doubly linked list"],
+    "examples": [
+      "node.next",
+      "reverse a linked list",
+      "merge two linked lists"
+    ],
+    "related_topics": ["two pointers", "fast and slow pointers"],
+    "include_when": [
+      "The problem uses linked-list nodes connected through references.",
+      "Traversal, modification, or comparison of linked-list nodes is central to the solution."
+    ]
+  },
+  {
+    "name": "tree",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems involving hierarchical structures made of nodes connected by parent-child relationships.",
+    "aliases": ["trees", "rooted tree", "hierarchical tree"],
+    "examples": ["root.left", "root.right", "traverse the tree"],
+    "related_topics": [
+      "tree traversal",
+      "binary tree",
+      "binary search tree",
+      "depth first search",
+      "breadth first search"
+    ],
+    "include_when": [
+      "The problem represents data using a tree or hierarchical node structure.",
+      "Parent-child relationships are central to the solution."
+    ]
+  },
+  {
+    "name": "graph",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems involving vertices connected through edges or transitions.",
+    "aliases": ["graphs", "network", "nodes and edges"],
+    "examples": [
+      "adjacency list",
+      "visit neighbors",
+      "find connected components"
+    ],
+    "related_topics": [
+      "graph traversal",
+      "connectivity",
+      "shortest path",
+      "cycle detection"
+    ],
+    "include_when": [
+      "The problem models entities as vertices connected by edges or transitions.",
+      "Relationships or paths between nodes are central to the problem."
+    ]
+  },
+  {
+    "name": "stack",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems where last-in-first-out behavior is central to the solution.",
+    "aliases": ["stack data structure", "LIFO"],
+    "examples": [
+      "push and pop",
+      "remove the most recent item",
+      "matching brackets"
+    ],
+    "related_topics": [
+      "monotonic stack",
+      "next greater element",
+      "parentheses matching"
+    ],
+    "include_when": [
+      "A last-in-first-out data structure is central to the intended solution.",
+      "The solution repeatedly pushes and pops elements while maintaining stack order."
+    ]
+  },
+  {
+    "name": "queue",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems where first-in-first-out processing is central.",
+    "aliases": ["queue data structure", "FIFO"],
+    "examples": ["enqueue and dequeue", "process elements in arrival order"],
+    "related_topics": ["breadth first search", "sliding window"],
+    "include_when": [
+      "First-in-first-out processing is central to the intended solution.",
+      "A queue is used to process states or elements in arrival order."
+    ]
+  },
+  {
+    "name": "hashing",
+    "parent": null,
+    "category": "technique",
+    "description": "Using hash tables, maps, or sets for fast lookup, membership testing, grouping, or counting.",
+    "aliases": [
+      "hash map",
+      "hash table",
+      "dictionary",
+      "hash set",
+      "map lookup"
+    ],
+    "examples": [
+      "unordered map",
+      "check whether a value exists",
+      "store value-to-index mapping"
+    ],
+    "related_topics": [
+      "frequency counting",
+      "duplicate detection",
+      "complement lookup"
+    ],
+    "include_when": [
+      "Fast lookup, membership testing, counting, or mapping is central to the intended solution.",
+      "A hash map or hash set significantly reduces the required time complexity."
+    ]
+  },
+  {
+    "name": "dynamic programming",
+    "parent": null,
+    "category": "technique",
+    "description": "Solving a problem by defining states for subproblems and reusing solutions to overlapping subproblems.",
+    "aliases": ["DP", "dynamic programming", "memoization", "tabulation"],
+    "examples": ["dp[i]", "dp[i][j]", "memoized recursion", "bottom-up table"],
+    "related_topics": [
+      "take or skip",
+      "state transition",
+      "subsequence dp",
+      "one dimensional dp",
+      "two dimensional dp",
+      "interval dp",
+      "partition dp"
+    ],
+    "include_when": [
+      "The intended solution defines states representing subproblems and reuses previously computed results.",
+      "Overlapping subproblems and state transitions are central to the solution."
+    ]
+  },
+  {
+    "name": "greedy",
+    "parent": null,
+    "category": "technique",
+    "description": "Making a locally optimal choice at each step with the goal of obtaining a globally optimal result.",
+    "aliases": ["greedy algorithm", "locally optimal choice", "greedy choice"],
+    "examples": [
+      "always choose the earliest finish",
+      "take the largest available option",
+      "make the best immediate choice"
+    ],
+    "related_topics": [
+      "optimization objective",
+      "sorting",
+      "interval scheduling"
+    ],
+    "include_when": [
+      "The intended solution repeatedly makes locally optimal choices without needing to reconsider previous decisions.",
+      "The local-choice strategy can be justified as producing an optimal global result."
+    ]
+  },
+  {
+    "name": "divide and conquer",
+    "parent": null,
+    "category": "technique",
+    "description": "Breaking a problem into smaller subproblems, solving them independently or recursively, and combining the results.",
+    "aliases": ["divide-and-conquer", "recursive decomposition"],
+    "examples": [
+      "split the array in half",
+      "solve left and right halves",
+      "merge subproblem results"
+    ],
+    "related_topics": ["merge sort", "binary search", "recursion"],
+    "include_when": [
+      "The intended solution divides the input into smaller parts, solves those parts, and combines their results.",
+      "Independent recursive subproblems form the main structure of the algorithm."
+    ]
+  },
+  {
+    "name": "backtracking",
+    "parent": null,
+    "category": "technique",
+    "description": "Exploring possible choices incrementally and undoing choices when they cannot lead to a valid solution.",
+    "aliases": ["backtracking", "search with undo", "decision tree search"],
+    "examples": ["choose a candidate", "recurse", "undo the choice"],
+    "related_topics": [
+      "permutation",
+      "combination",
+      "set or subset",
+      "depth first search"
+    ],
+    "include_when": [
+      "The solution explores multiple possible choices and reverses a choice when continuing from it is no longer useful or valid.",
+      "The algorithm searches a decision tree and restores state after recursive exploration."
+    ]
+  },
+  {
+    "name": "sorting",
+    "parent": null,
+    "category": "technique",
+    "description": "Reordering values to expose useful relationships or make another algorithm possible.",
+    "aliases": ["sort", "sorting array", "ordered elements"],
+    "examples": [
+      "sort the array",
+      "sort intervals by start time",
+      "sort by frequency"
+    ],
+    "related_topics": ["binary search", "two pointers", "merge intervals"],
+    "include_when": [
+      "Sorting is an important part of the intended solution.",
+      "Reordering the input exposes relationships or enables an efficient subsequent technique."
+    ]
+  },
+  {
+    "name": "binary search",
+    "parent": null,
+    "category": "technique",
+    "description": "Repeatedly reducing an ordered search space by comparing a target with a middle position.",
+    "aliases": [
+      "binary search",
+      "logarithmic search",
+      "search in sorted array"
+    ],
+    "examples": [
+      "left and right pointers",
+      "mid = (left + right) / 2",
+      "search in a sorted range"
+    ],
+    "related_topics": [
+      "binary search on answer",
+      "sorted array",
+      "divide and conquer"
+    ],
+    "include_when": [
+      "The intended solution repeatedly halves an ordered search space.",
+      "The algorithm uses a monotonic or sorted property to eliminate roughly half of the candidates at each step."
+    ]
+  },
+  {
+    "name": "binary search on answer",
+    "parent": "binary search",
+    "category": "pattern",
+    "description": "Searching over possible answer values when feasibility changes monotonically.",
+    "aliases": [
+      "binary search on result",
+      "search the answer",
+      "parametric search"
+    ],
+    "examples": [
+      "minimum possible capacity",
+      "maximum feasible value",
+      "check whether an answer is possible"
+    ],
+    "related_topics": [
+      "binary search",
+      "minimize value",
+      "maximize value",
+      "reachability"
+    ],
+    "include_when": [
+      "The search space consists of possible answer values rather than input positions.",
+      "A feasibility predicate changes monotonically as the candidate answer changes."
+    ]
+  },
+  {
+    "name": "subarray",
+    "parent": "array",
+    "category": "pattern",
+    "description": "A contiguous portion of an array.",
+    "aliases": ["contiguous subarray", "continuous subarray", "array range"],
+    "examples": [
+      "nums[l..r]",
+      "contiguous elements",
+      "choose a continuous segment"
+    ],
+    "related_topics": ["prefix sum", "sliding window", "subsequence"],
+    "include_when": [
+      "The problem selects, examines, counts, or optimizes over a contiguous segment of an array.",
+      "All elements between two chosen boundaries belong to the considered sequence."
+    ]
+  },
+  {
+    "name": "subsequence",
+    "parent": "array",
+    "category": "pattern",
+    "description": "A sequence formed by deleting zero or more elements while preserving the relative order of the remaining elements.",
+    "aliases": [
+      "non-contiguous sequence",
+      "select elements in order",
+      "sequence after deleting elements"
+    ],
+    "examples": [
+      "choose elements while preserving order",
+      "skip arbitrary elements",
+      "nums[i1], nums[i2], nums[i3] where i1 < i2 < i3"
+    ],
+    "related_topics": [
+      "subsequence dp",
+      "take or skip",
+      "increasing subsequence",
+      "subsequence of string"
+    ],
+    "include_when": [
+      "The problem explicitly asks for or constructs a subsequence: a sequence formed by selecting elements while preserving their relative order.",
+  "The selected elements themselves form the central object, constraint, or output of the problem.",
+  "The solution depends on properties of the selected subsequence as a sequence.",
+  "Do not assign this concept merely because some elements are skipped.",
+  "Do not assign this concept merely because a dynamic programming solution has take/skip choices."
+    ]
+  },
+  {
+    "name": "substring",
+    "parent": "string",
+    "category": "pattern",
+    "description": "A contiguous portion of a string.",
+    "aliases": ["contiguous substring", "continuous substring", "string range"],
+    "examples": [
+      "s[l..r]",
+      "contiguous characters",
+      "every character between two indices"
+    ],
+    "related_topics": ["sliding window", "palindrome", "subsequence of string"],
+    "include_when": [
+      "The problem considers a contiguous range of characters in a string.",
+      "Characters between two string indices must remain together."
+    ]
+  },
+  {
+    "name": "subsequence of string",
+    "parent": "string",
+    "category": "pattern",
+    "description": "A sequence of characters formed by deleting characters while preserving their relative order.",
+    "aliases": [
+      "string subsequence",
+      "non-contiguous string",
+      "character subsequence"
+    ],
+    "examples": [
+      "delete characters without changing order",
+      "check whether one string is a subsequence of another"
+    ],
+    "related_topics": [
+      "subsequence",
+      "longest common subsequence",
+      "dynamic programming"
+    ],
+    "include_when": [
+      "Characters may be skipped while their original relative order must remain unchanged.",
+      "The problem asks whether or how one string can be obtained as a subsequence of another."
+    ]
+  },
+  {
+    "name": "prefix",
+    "parent": null,
+    "category": "pattern",
+    "description": "A portion of an array or string beginning at the first element or character.",
+    "aliases": ["prefix", "starting segment", "initial segment"],
+    "examples": ["first k elements", "s[0..i]", "prefix of length k"],
+    "related_topics": ["prefix sum", "prefix matching", "suffix"],
+    "include_when": [
+      "A segment begins at the first element or first character.",
+      "The solution reasons about the portion of the input from index 0 through a variable endpoint."
+    ]
+  },
+  {
+    "name": "suffix",
+    "parent": null,
+    "category": "pattern",
+    "description": "A portion of an array or string extending from a chosen position to the end.",
+    "aliases": ["suffix", "ending segment", "tail segment"],
+    "examples": ["last k elements", "s[i..n-1]", "suffix beginning at i"],
+    "related_topics": ["suffix sum", "prefix", "suffix matching"],
+    "include_when": [
+      "A segment extends from some position to the final element or character.",
+      "The solution reasons about the remaining portion of the input after a chosen position."
+    ]
+  },
+  {
+    "name": "prefix sum",
+    "parent": "prefix",
+    "category": "technique",
+    "description": "A cumulative representation that stores the sum of values from the beginning up to each position.",
+    "aliases": ["cumulative sum", "running sum", "prefix cumulative sum"],
+    "examples": [
+      "prefix[i] = prefix[i-1] + nums[i]",
+      "range sum using prefix differences"
+    ],
+    "related_topics": ["subarray", "suffix sum", "prefix"],
+    "include_when": [
+      "Cumulative sums from the start are used to answer range-sum or balance queries efficiently.",
+      "The solution relies on differences between prefix sums."
+    ]
+  },
+  {
+    "name": "suffix sum",
+    "parent": "suffix",
+    "category": "technique",
+    "description": "A cumulative representation that stores the sum of values from each position through the end.",
+    "aliases": ["suffix cumulative sum", "reverse running sum"],
+    "examples": [
+      "suffix[i] = suffix[i+1] + nums[i]",
+      "sum of all elements after an index"
+    ],
+    "related_topics": ["prefix sum", "suffix", "index relationship"],
+    "include_when": [
+      "Cumulative sums from each position to the end are used in the intended solution.",
+      "The solution needs efficient computation of sums over suffixes or elements to the right of an index."
+    ]
+  },
+  {
+    "name": "two pointers",
+    "parent": null,
+    "category": "technique",
+    "description": "Using two indices that move through a sequence to reduce the search space or maintain a relationship between positions.",
+    "aliases": ["two pointer", "left and right pointers", "two indices"],
+    "examples": [
+      "left++ and right--",
+      "move two pointers toward each other",
+      "maintain a pair of boundaries"
+    ],
+    "related_topics": [
+      "sliding window",
+      "mirror index",
+      "two indices",
+      "sorted array"
+    ],
+    "include_when": [
+      "Two indices are actively maintained and moved according to a rule during the main algorithm.",
+      "The movement of two pointers is central to reducing the search space or maintaining a relationship."
+    ]
+  },
+  {
+    "name": "sliding window",
+    "parent": "two pointers",
+    "category": "pattern",
+    "description": "Maintaining a contiguous range with left and right boundaries that move through an array or string.",
+    "aliases": [
+      "window technique",
+      "moving window",
+      "expand and shrink window"
+    ],
+    "examples": [
+      "left and right boundaries",
+      "expand right pointer",
+      "shrink while condition is violated"
+    ],
+    "related_topics": [
+      "subarray",
+      "substring",
+      "frequency counting",
+      "two pointers"
+    ],
+    "include_when": [
+      "The algorithm maintains a contiguous active window with left and right boundaries.",
+      "The window expands, shrinks, or moves while maintaining a condition over the current range."
+    ]
+  },
+  {
+    "name": "index relationship",
+    "parent": null,
+    "category": "structural",
+    "description": "Problems where the solution depends on a mathematical or positional relationship between indices.",
+    "aliases": ["index pattern", "position relationship", "index dependency"],
+    "examples": [
+      "i and j",
+      "i and n-1-i",
+      "j = i + k",
+      "distance between indices"
+    ],
+    "related_topics": [
+      "mirror index",
+      "adjacent indices",
+      "index distance",
+      "two indices",
+      "three indices"
+    ],
+    "include_when": [
+      "A mathematical or positional relationship between indices is central to the solution.",
+      "The exact positions or differences between positions matter independently of the values alone."
+    ]
+  },
+  {
+    "name": "mirror index",
+    "parent": "index relationship",
+    "category": "pattern",
+    "description": "Two positions that are symmetric around the center of a sequence, commonly represented by i and n-1-i.",
+    "aliases": [
+      "symmetric index",
+      "opposite index",
+      "mirror position",
+      "opposite positions"
+    ],
+    "examples": [
+      "a[i] and a[n-1-i]",
+      "first and last element",
+      "second and second-last element",
+      "compare elements from both ends"
+    ],
+    "related_topics": ["two pointers", "symmetry", "palindrome"],
+    "include_when": [
+      "The solution compares or relates positions symmetric around the center.",
+      "The relationship i and n-1-i, or an equivalent mirror relationship, is central to the problem.",
+      "The problem compares elements from opposite ends of a sequence as corresponding positions.",
+      "Do not assign this concept merely because two arbitrary positions are compared."
+    ]
+  },
+  {
+    "name": "adjacent indices",
+    "parent": "index relationship",
+    "category": "pattern",
+    "description": "Problems involving neighboring positions such as i and i+1 or i and i-1.",
+    "aliases": [
+      "neighboring indices",
+      "consecutive positions",
+      "adjacent elements"
+    ],
+    "examples": [
+      "nums[i] and nums[i+1]",
+      "current and next element",
+      "compare neighboring elements"
+    ],
+    "related_topics": ["index relationship", "two pointers"],
+    "include_when": [
+      "The solution specifically depends on neighboring or consecutive positions.",
+      "The relationship between i and i+1 or i and i-1 is important to the condition or transition."
+    ]
+  },
+  {
+    "name": "index distance",
+    "parent": "index relationship",
+    "category": "pattern",
+    "description": "Problems where the difference or distance between two indices is part of the condition or objective.",
+    "aliases": [
+      "distance between indices",
+      "index gap",
+      "position difference",
+      "index difference"
+    ],
+    "examples": [
+      "j - i >= k",
+      "maximize distance between equal values",
+      "indices within k positions"
+    ],
+    "related_topics": ["two indices", "index relationship", "sliding window"],
+    "include_when": [
+      "The difference, gap, or distance between two indices is explicitly used in the condition.",
+      "The problem asks to maximize, minimize, bound, or otherwise reason about index distance."
+    ]
+  },
+  {
+    "name": "two indices",
+    "parent": "index relationship",
+    "category": "pattern",
+    "description": "Problems where selecting, comparing, or relating two positions in a sequence is central to the solution.",
+    "aliases": [
+      "pair of indices",
+      "two positions",
+      "two array positions",
+      "choose i and j"
+    ],
+    "examples": [
+      "find i and j",
+      "compare nums[i] and nums[j]",
+      "condition involving two indices"
+    ],
+    "related_topics": ["index distance", "two pointers", "complement lookup"],
+    "include_when": [
+      "The core problem requires selecting or reasoning about a pair of positions.",
+      "The relationship between two indices is central even if a literal two-pointer technique is not used."
+    ]
+  },
+  {
+    "name": "three indices",
+    "parent": "index relationship",
+    "category": "pattern",
+    "description": "Problems where relationships among three positions or elements are central to the solution.",
+    "aliases": ["three positions", "three array indices", "triple indices"],
+    "examples": [
+      "i < j < k",
+      "nums[i], nums[j], nums[k]",
+      "three-sum style relationships"
+    ],
+    "related_topics": ["two indices", "subsequence", "three sum"],
+    "include_when": [
+      "The core condition or objective involves three distinct indices or elements.",
+      "The ordering or relationship among i, j, and k is important to the solution."
+    ]
+  },
+  {
+    "name": "take or skip",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "A decision pattern where the current element is either selected or skipped, producing alternative state transitions.",
+    "aliases": [
+      "include or skip",
+      "choose or ignore",
+      "take or leave",
+      "include or exclude"
+    ],
+    "examples": [
+      "take current element or move on",
+      "skip current element",
+      "dp[i] = max(take, skip)"
+    ],
+    "related_topics": [
+      "subsequence",
+      "one dimensional dp",
+      "optimization objective"
+    ],
+    "include_when": [
+      "The central problem pattern is deciding whether to select/use an item or skip it.",
+      "The take/skip decision directly represents the reusable problem structure.",
+      "Different choices of taking or skipping items determine the main optimization or counting recurrence.",
+      "Do not assign this concept merely because a DP recurrence chooses between two previously computed states."
+    ]
+  },
+  {
+    "name": "state transition",
+    "parent": "dynamic programming",
+    "category": "structural",
+    "description": "A rule describing how the current state is derived from one or more previously computed states.",
+    "aliases": ["DP transition", "transition equation", "recurrence"],
+    "examples": ["dp[i] = dp[i-1] + dp[i-2]", "dp[i][j] depends on dp[i-1][j]"],
+    "related_topics": [
+      "dynamic programming",
+      "one dimensional dp",
+      "two dimensional dp"
+    ],
+    "include_when": [
+      "The specific transition structure is itself a meaningful reusable pattern that distinguishes the problem from ordinary dynamic programming.",
+      "The problem relies on a notable state-transition relationship that is useful as a searchable characteristic.",
+      "Do not assign this concept merely because a dynamic programming solution contains recurrence equations."
+    ]
+  },
+  {
+    "name": "one dimensional dp",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "Dynamic programming where the state is represented primarily by one dimension.",
+    "aliases": ["1D DP", "one-dimensional dynamic programming"],
+    "examples": [
+      "dp[i]",
+      "dp indexed by position",
+      "rolling one-dimensional state"
+    ],
+    "related_topics": ["take or skip", "state transition", "subsequence dp"],
+    "include_when": [
+      "The primary DP state can be represented with one varying dimension.",
+      "The solution mainly uses values such as dp[i] rather than a grid or matrix of states."
+    ]
+  },
+  {
+    "name": "two dimensional dp",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "Dynamic programming where the state depends on two dimensions such as two indices or quantities.",
+    "aliases": ["2D DP", "two-dimensional dynamic programming"],
+    "examples": ["dp[i][j]", "grid state", "two-string comparison"],
+    "related_topics": ["state transition", "subsequence dp"],
+    "include_when": [
+      "The DP state requires two independent dimensions.",
+      "The solution naturally uses a table such as dp[i][j] where both dimensions carry meaningful state information."
+    ]
+  },
+  {
+    "name": "subsequence dp",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "Dynamic programming where states represent properties, choices, or optimizations over subsequences.",
+    "aliases": ["DP on subsequences", "subsequence dynamic programming"],
+    "examples": [
+      "longest increasing subsequence",
+      "choose elements in order",
+      "state based on previous selected element"
+    ],
+    "related_topics": ["subsequence", "take or skip", "one dimensional dp"],
+    "include_when": [
+      "The DP state represents a property or optimization of a subsequence.",
+      "The solution makes ordered selection decisions among elements while preserving relative order."
+    ]
+  },
+  {
+    "name": "interval dp",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "Dynamic programming where states represent contiguous intervals and transitions split, expand, or shrink those intervals.",
+    "aliases": [
+      "interval dynamic programming",
+      "range DP",
+      "DP over intervals"
+    ],
+    "examples": [
+      "dp[l][r]",
+      "solve a range from l to r",
+      "split an interval at k"
+    ],
+    "related_topics": ["two dimensional dp", "partition dp"],
+    "include_when": [
+      "The DP state represents a contiguous interval using boundaries such as l and r.",
+      "Transitions operate by splitting, shrinking, or combining intervals."
+    ]
+  },
+  {
+    "name": "partition dp",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "Dynamic programming where a sequence, set, or range is divided into smaller parts and the best combination is computed.",
+    "aliases": ["partition dynamic programming", "split DP", "partitioning DP"],
+    "examples": [
+      "split array into k groups",
+      "partition string into segments",
+      "dp over partition points"
+    ],
+    "related_topics": [
+      "interval dp",
+      "state transition",
+      "optimization objective"
+    ],
+    "include_when": [
+      "The solution divides a sequence, range, or set into multiple parts.",
+      "DP states represent different partition boundaries or numbers of groups."
+    ]
+  },
+  {
+    "name": "monotonic stack",
+    "parent": "stack",
+    "category": "technique",
+    "description": "A stack maintained in increasing or decreasing order to efficiently resolve relationships between elements.",
+    "aliases": [
+      "monotonic increasing stack",
+      "monotonic decreasing stack",
+      "monotonic stack"
+    ],
+    "examples": [
+      "pop while current value is greater",
+      "maintain increasing stack",
+      "find nearest larger or smaller value"
+    ],
+    "related_topics": [
+      "next greater element",
+      "previous greater element",
+      "next smaller element",
+      "previous smaller element"
+    ],
+    "include_when": [
+      "The stack is deliberately maintained in monotonic increasing or decreasing order.",
+      "Elements are popped based on comparisons with the current element to find nearest greater or smaller relationships."
+    ]
+  },
+  {
+    "name": "next greater element",
+    "parent": "monotonic stack",
+    "category": "pattern",
+    "description": "Finding the first element to the right that is greater than the current element.",
+    "aliases": [
+      "next larger element",
+      "first greater element to the right",
+      "NGE"
+    ],
+    "examples": [
+      "find the next value greater than nums[i]",
+      "scan from right to left with a stack"
+    ],
+    "related_topics": ["previous greater element", "monotonic stack"],
+    "include_when": [
+      "For each element, the problem asks for or depends on the nearest or first greater element to its right.",
+      "The next greater relationship is central even if another implementation is possible."
+    ]
+  },
+  {
+    "name": "previous greater element",
+    "parent": "monotonic stack",
+    "category": "pattern",
+    "description": "Finding the nearest element to the left that is greater than the current element.",
+    "aliases": ["previous larger element", "nearest greater on left"],
+    "examples": ["greater value to the left", "nearest previous greater value"],
+    "related_topics": ["next greater element", "monotonic stack"],
+    "include_when": [
+      "The problem asks for or depends on the nearest greater element to the left of each relevant element."
+    ]
+  },
+  {
+    "name": "next smaller element",
+    "parent": "monotonic stack",
+    "category": "pattern",
+    "description": "Finding the first element to the right that is smaller than the current element.",
+    "aliases": ["next lower element", "first smaller element to the right"],
+    "examples": ["find the next value smaller than nums[i]"],
+    "related_topics": ["previous smaller element", "monotonic stack"],
+    "include_when": [
+      "The problem asks for or depends on the nearest or first smaller element to the right."
+    ]
+  },
+  {
+    "name": "previous smaller element",
+    "parent": "monotonic stack",
+    "category": "pattern",
+    "description": "Finding the nearest element to the left that is smaller than the current element.",
+    "aliases": ["previous lower element", "nearest smaller on left"],
+    "examples": ["smaller value to the left", "nearest previous smaller value"],
+    "related_topics": ["next smaller element", "monotonic stack"],
+    "include_when": [
+      "The problem asks for or depends on the nearest smaller element to the left."
+    ]
+  },
+  {
+    "name": "frequency counting",
+    "parent": "hashing",
+    "category": "pattern",
+    "description": "Counting how often values, characters, or categories occur and using those counts to solve a problem.",
+    "aliases": [
+      "frequency map",
+      "count occurrences",
+      "frequency table",
+      "character counts"
+    ],
+    "examples": [
+      "count each character",
+      "count occurrences of each number",
+      "map[value]++"
+    ],
+    "related_topics": ["hashing", "duplicate detection", "sliding window"],
+    "include_when": [
+      "Counts or frequencies of values or characters are directly used in the solution.",
+      "The number of occurrences of an item affects the condition, output, or state."
+    ]
+  },
+  {
+    "name": "duplicate detection",
+    "parent": "hashing",
+    "category": "pattern",
+    "description": "Determining whether a value, element, or state appears more than once.",
+    "aliases": [
+      "find duplicates",
+      "detect repeated values",
+      "duplicate checking"
+    ],
+    "examples": [
+      "seen set",
+      "has this value appeared before?",
+      "detect repeated characters"
+    ],
+    "related_topics": ["frequency counting", "hashing"],
+    "include_when": [
+      "The problem requires determining whether a value, character, or state has appeared previously.",
+      "Repeated occurrences or uniqueness are central to the condition."
+    ]
+  },
+  {
+    "name": "complement lookup",
+    "parent": "hashing",
+    "category": "pattern",
+    "description": "Searching for a value that complements the current value to satisfy a target equation or condition.",
+    "aliases": [
+      "complement search",
+      "target complement",
+      "needed value lookup"
+    ],
+    "examples": [
+      "target - nums[i]",
+      "find the number needed to reach target",
+      "two sum"
+    ],
+    "related_topics": ["two indices", "hashing", "frequency counting"],
+    "include_when": [
+      "For a current value, the solution computes or reasons about the specific complementary value needed to satisfy a target condition.",
+      "The problem can be solved by looking up the value needed to pair with the current value."
+    ]
+  },
+  {
+    "name": "palindrome",
+    "parent": "symmetry",
+    "category": "pattern",
+    "description": "A sequence or string that remains the same when read from both directions.",
+    "aliases": [
+      "palindromic",
+      "reads the same forwards and backwards",
+      "symmetric string"
+    ],
+    "examples": ["s[i] == s[n-1-i]", "compare characters from both ends"],
+    "related_topics": ["mirror index", "two pointers", "symmetry"],
+    "include_when": [
+      "The problem asks whether a sequence reads the same forwards and backwards.",
+      "Matching symmetric elements or characters is central to the solution."
+    ]
+  },
+  {
+    "name": "symmetry",
+    "parent": null,
+    "category": "structural",
+    "description": "A problem where equivalent or related elements, positions, or states occur in symmetric arrangements.",
+    "aliases": ["symmetric structure", "mirror structure", "reflection"],
+    "examples": [
+      "left side mirrors right side",
+      "equal elements at symmetric positions"
+    ],
+    "related_topics": ["mirror index", "palindrome"],
+    "include_when": [
+      "The problem contains a meaningful structural symmetry between two or more sides, regions, positions, or states.",
+      "The solution exploits a reflection or mirrored relationship."
+    ]
+  },
+  {
+    "name": "optimization objective",
+    "parent": null,
+    "category": "objective",
+    "description": "A problem objective involving minimizing or maximizing a value, cost, length, count, score, or number of operations.",
+    "aliases": ["optimization", "best possible value", "maximize or minimize"],
+    "examples": [
+      "find the maximum",
+      "find the minimum cost",
+      "minimize operations",
+      "maximize profit"
+    ],
+    "related_topics": [
+      "maximize value",
+      "minimize value",
+      "dynamic programming",
+      "greedy"
+    ],
+    "include_when": [
+       "The problem explicitly asks for an optimization objective such as minimum cost, maximum value, shortest length, or best possible result.",
+  "The objective itself is a meaningful searchable characteristic of the problem.",
+  "Do not assign this concept merely because the solution computes a maximum or minimum internally."
+    ]
+  },
+  {
+    "name": "maximize value",
+    "parent": "optimization objective",
+    "category": "objective",
+    "description": "The goal is to maximize a numerical value, score, sum, profit, capacity, or similar quantity.",
+    "aliases": [
+      "maximum value",
+      "maximize score",
+      "largest possible",
+      "maximize sum"
+    ],
+    "examples": ["maximum profit", "largest possible sum", "maximize score"],
+    "related_topics": ["minimize value", "take or skip", "dynamic programming"],
+    "include_when": [
+      "The optimization objective is explicitly to maximize a numerical quantity.",
+      "Maximizing that quantity is a central part of the problem's formulation rather than merely describing the meaning of words such as longest, largest, or greatest."
+    ]
+  },
+  {
+    "name": "minimize value",
+    "parent": "optimization objective",
+    "category": "objective",
+    "description": "The goal is to minimize a numerical value, cost, distance, score, or similar quantity.",
+    "aliases": [
+      "minimum value",
+      "minimize cost",
+      "smallest possible",
+      "minimum operations"
+    ],
+    "examples": [
+      "minimum cost",
+      "minimum number of operations",
+      "smallest possible answer"
+    ],
+    "related_topics": [
+      "maximize value",
+      "binary search on answer",
+      "dynamic programming"
+    ],
+    "include_when": [
+      "The required answer is the smallest possible value, cost, distance, or similar quantity."
+    ]
+  },
+  {
+    "name": "maximize count",
+    "parent": "optimization objective",
+    "category": "objective",
+    "description": "The goal is to maximize the number of selected items, valid operations, elements, or successful outcomes.",
+    "aliases": [
+      "maximum number",
+      "maximize number of elements",
+      "largest count"
+    ],
+    "examples": [
+      "select the maximum number of intervals",
+      "maximize number of valid elements"
+    ],
+    "related_topics": ["minimize count", "greedy", "optimization objective"],
+    "include_when": [
+     "The problem explicitly asks to maximize the number of selected items, operations, groups, or valid configurations.",
+  "The quantity being maximized is a count and this count is central to the problem objective.",
+  "Do not assign this concept merely because the answer is a maximum length or maximum value."
+    ]
+  },
+  {
+    "name": "minimize count",
+    "parent": "optimization objective",
+    "category": "objective",
+    "description": "The goal is to minimize the number of selected items, operations, steps, or counted actions.",
+    "aliases": ["minimum number", "fewest operations", "minimum steps"],
+    "examples": [
+      "minimum number of coins",
+      "minimum number of operations",
+      "fewest jumps"
+    ],
+    "related_topics": [
+      "maximize count",
+      "shortest path",
+      "dynamic programming"
+    ],
+    "include_when": [
+      "The objective is to use the fewest possible operations, elements, steps, jumps, or other counted actions."
+    ]
+  },
+  {
+    "name": "count number of ways",
+    "parent": null,
+    "category": "objective",
+    "description": "The task is to count how many distinct valid ways, configurations, paths, or choices exist.",
+    "aliases": [
+      "count ways",
+      "number of ways",
+      "how many possible ways",
+      "count combinations"
+    ],
+    "examples": [
+      "number of ways to reach target",
+      "count valid configurations",
+      "number of distinct paths"
+    ],
+    "related_topics": ["dynamic programming", "combinatorics", "backtracking"],
+    "include_when": [
+      "The required answer is the number of distinct valid solutions, paths, choices, or configurations.",
+      "The problem asks how many ways something can be achieved rather than asking for one solution."
+    ]
+  },
+  {
+    "name": "reachability",
+    "parent": null,
+    "category": "objective",
+    "description": "Determining whether a state, position, node, or target can be reached from a starting state.",
+    "aliases": [
+      "can reach",
+      "is reachable",
+      "possible to reach",
+      "feasibility"
+    ],
+    "examples": [
+      "can we reach the last index?",
+      "can one node reach another?",
+      "is the target reachable?"
+    ],
+    "related_topics": ["graph traversal", "dynamic programming", "greedy"],
+    "include_when": [
+      "The main question is whether a particular state, node, position, or target is reachable.",
+      "The answer is fundamentally a yes/no or feasibility question about reaching a target."
+    ]
+  },
+  {
+    "name": "connectivity",
+    "parent": "graph",
+    "category": "pattern",
+    "description": "Determining which vertices, components, or regions are connected through edges or valid transitions.",
+    "aliases": [
+      "connected components",
+      "connected nodes",
+      "network connectivity"
+    ],
+    "examples": [
+      "find connected components",
+      "determine whether two nodes are connected"
+    ],
+    "related_topics": ["graph", "union find", "graph traversal"],
+    "include_when": [
+      "The problem asks which nodes, cells, or components belong to the same connected region.",
+      "Connectivity through edges, adjacency, or valid transitions is central to the solution."
+    ]
+  },
+  {
+    "name": "shortest path",
+    "parent": "graph",
+    "category": "pattern",
+    "description": "Finding the minimum-cost, minimum-distance, or minimum-edge path between states or vertices.",
+    "aliases": ["minimum path", "shortest route", "minimum distance path"],
+    "examples": [
+      "fewest edges",
+      "minimum travel cost",
+      "shortest route between nodes"
+    ],
+    "related_topics": [
+      "breadth first search",
+      "graph traversal",
+      "minimize value"
+    ],
+    "include_when": [
+      "The objective is to find a path with minimum distance, cost, weight, or number of edges.",
+      "Path length or accumulated path cost is explicitly minimized."
+    ]
+  },
+  {
+    "name": "graph traversal",
+    "parent": "graph",
+    "category": "technique",
+    "description": "Systematically visiting vertices and edges to explore a graph.",
+    "aliases": ["graph search", "visit graph nodes", "traverse graph"],
+    "examples": ["DFS", "BFS", "visit every reachable node"],
+    "related_topics": [
+      "depth first search",
+      "breadth first search",
+      "connectivity"
+    ],
+    "include_when": [
+      "The solution systematically visits graph vertices or edges to explore reachable states.",
+      "Traversal order rather than direct mathematical computation is central to the solution."
+    ]
+  },
+  {
+    "name": "depth first search",
+    "parent": "graph traversal",
+    "category": "technique",
+    "description": "Exploring one branch or path as deeply as possible before backtracking.",
+    "aliases": ["DFS", "depth-first traversal"],
+    "examples": [
+      "recursive DFS",
+      "stack-based graph traversal",
+      "explore neighbors recursively"
+    ],
+    "related_topics": ["backtracking", "graph traversal", "tree traversal"],
+    "include_when": [
+      "The intended solution explores one branch deeply before exploring sibling branches.",
+      "DFS is used as the primary traversal strategy for a graph, tree, or state space."
+    ]
+  },
+  {
+    "name": "breadth first search",
+    "parent": "graph traversal",
+    "category": "technique",
+    "description": "Exploring states level by level using a queue.",
+    "aliases": ["BFS", "breadth-first traversal"],
+    "examples": [
+      "queue-based traversal",
+      "process nodes by distance from source"
+    ],
+    "related_topics": ["shortest path", "graph traversal", "tree traversal"],
+    "include_when": [
+      "The solution explores nodes or states level by level.",
+      "A queue is used to process states in order of their distance or depth from a starting state."
+    ]
+  },
+  {
+    "name": "tree traversal",
+    "parent": "tree",
+    "category": "technique",
+    "description": "Visiting tree nodes using an organized traversal such as preorder, inorder, postorder, or level order.",
+    "aliases": ["tree DFS", "tree walk", "binary tree traversal"],
+    "examples": ["preorder", "inorder", "postorder", "level order"],
+    "related_topics": ["depth first search", "breadth first search", "tree"],
+    "include_when": [
+      "Systematically visiting tree nodes is central to the solution.",
+      "The solution uses preorder, inorder, postorder, or level-order traversal."
+    ]
+  },
+  {
+    "name": "binary tree",
+    "parent": "tree",
+    "category": "pattern",
+    "description": "A tree where each node has at most two children.",
+    "aliases": ["binary tree", "two-child tree"],
+    "examples": ["left child", "right child", "root.left and root.right"],
+    "related_topics": ["tree traversal", "binary search tree"],
+    "include_when": [
+      "The input structure is a binary tree where each node has at most two children."
+    ]
+  },
+  {
+    "name": "binary search tree",
+    "parent": "binary tree",
+    "category": "pattern",
+    "description": "A binary tree organized so values in the left subtree are smaller and values in the right subtree are larger according to the BST ordering rule.",
+    "aliases": ["BST", "binary search tree"],
+    "examples": ["left < root < right", "search for a value in a BST"],
+    "related_topics": ["binary search", "tree traversal"],
+    "include_when": [
+      "The tree satisfies binary-search ordering properties.",
+      "The solution exploits the fact that values are ordered relative to the root and subtrees."
+    ]
+  },
+  {
+    "name": "prefix matching",
+    "parent": "string",
+    "category": "pattern",
+    "description": "Problems where matching or comparing prefixes of strings is central to the solution.",
+    "aliases": ["common prefix", "prefix comparison", "starts with"],
+    "examples": [
+      "longest common prefix",
+      "compare starting characters",
+      "check whether one string starts with another"
+    ],
+    "related_topics": ["prefix", "string"],
+    "include_when": [
+      "The problem compares, searches, or constructs prefixes of one or more strings.",
+      "A shared starting sequence or prefix condition is central to the solution."
+    ]
+  },
+  {
+    "name": "modular arithmetic",
+    "parent": "mathematics",
+    "category": "pattern",
+    "description": "Using properties of remainders and modular operations to solve a problem.",
+    "aliases": ["mod arithmetic", "remainder arithmetic", "modulo"],
+    "examples": ["x % k", "answer modulo 1e9+7", "cyclic remainder"],
+    "related_topics": ["mathematics", "cyclic pattern"],
+    "include_when": [
+      "Properties of remainders or modular equivalence are central to the reasoning.",
+      "The solution relies on modulo operations to establish the required condition or compute the answer."
+    ]
+  },
+  {
+    "name": "mathematics",
+    "parent": null,
+    "category": "topic",
+    "description": "Problems whose primary reasoning relies on mathematical properties, formulas, arithmetic, number theory, combinatorics, or mathematical transformations.",
+    "aliases": ["math", "maths", "mathematical"],
+    "examples": [
+      "derive a formula",
+      "use divisibility",
+      "use arithmetic properties"
+    ],
+    "related_topics": [
+      "modular arithmetic",
+      "greatest common divisor",
+      "prime factorization",
+      "combinatorics"
+    ],
+    "include_when": [
+      "Mathematical properties or derivations are the primary source of the solution.",
+      "The problem can be solved mainly through arithmetic, algebra, number theory, geometry, or combinatorial reasoning rather than a major data-structure technique."
+    ]
+  },
+  {
+    "name": "greatest common divisor",
+    "parent": "mathematics",
+    "category": "pattern",
+    "description": "Problems involving the greatest common divisor of integers or relationships derived from it.",
+    "aliases": ["GCD", "greatest common divisor", "common divisor"],
+    "examples": [
+      "gcd(a,b)",
+      "Euclidean algorithm",
+      "numbers sharing a common divisor"
+    ],
+    "related_topics": ["mathematics"],
+    "include_when": [
+      "The solution explicitly computes or relies on the greatest common divisor of numbers.",
+      "Divisibility relationships derived from the GCD are central to the problem."
+    ]
+  },
+  {
+    "name": "prime factorization",
+    "parent": "mathematics",
+    "category": "pattern",
+    "description": "Breaking an integer into its prime factors and using those factors to reason about the problem.",
+    "aliases": ["prime decomposition", "factor into primes", "prime factors"],
+    "examples": ["factor n into primes", "count prime factors", "use divisors"],
+    "related_topics": ["mathematics", "greatest common divisor"],
+    "include_when": [
+      "The intended solution depends on decomposing integers into prime factors.",
+      "Properties of prime divisors determine the answer or enable the main optimization."
+    ]
+  },
+  {
+    "name": "combinatorics",
+    "parent": "mathematics",
+    "category": "pattern",
+    "description": "Using counting principles, permutations, combinations, or arrangements to determine the number of possible configurations.",
+    "aliases": [
+      "combinatorial counting",
+      "counting",
+      "permutations and combinations"
+    ],
+    "examples": [
+      "n choose k",
+      "count arrangements",
+      "count distinct selections"
+    ],
+    "related_topics": [
+      "count number of ways",
+      "backtracking",
+      "dynamic programming"
+    ],
+    "include_when": [
+      "The main reasoning uses counting principles, combinations, permutations, or arrangements.",
+      "The number of possible configurations can be derived mathematically rather than by explicitly enumerating all of them."
+    ]
+  },
+  {
+    "name": "bit manipulation",
+    "parent": null,
+    "category": "technique",
+    "description": "Using binary representations and bitwise operations such as AND, OR, XOR, shifts, and masks.",
+    "aliases": [
+      "bitwise operations",
+      "bit manipulation",
+      "binary bits",
+      "bit tricks"
+    ],
+    "examples": ["x & 1", "x ^ y", "bit mask", "left shift", "right shift"],
+    "related_topics": ["mathematics"],
+    "include_when": [
+      "Bitwise operations or binary representations are central to the intended solution.",
+      "Operations such as AND, OR, XOR, shifting, or masking are used to represent or transform state."
+    ]
+  },
+  {
+    "name": "set or subset",
+    "parent": null,
+    "category": "pattern",
+    "description": "Problems involving selecting any collection of elements regardless of their original order.",
+    "aliases": ["subset", "subsets", "set selection", "choose a subset"],
+    "examples": [
+      "select or reject each element",
+      "generate all subsets",
+      "choose k elements"
+    ],
+    "related_topics": [
+      "backtracking",
+      "take or skip",
+      "combinatorics",
+      "bit manipulation"
+    ],
+    "include_when": [
+      "The problem asks to select any collection of elements without requiring the original order to be preserved.",
+      "The solution reasons about membership in a subset rather than a contiguous range or ordered subsequence."
+    ]
+  },
+  {
+    "name": "permutation",
+    "parent": null,
+    "category": "pattern",
+    "description": "Problems involving rearrangements where the order of all selected elements matters.",
+    "aliases": ["permutations", "arrangements", "reordering"],
+    "examples": [
+      "generate all permutations",
+      "arrange n elements",
+      "all possible orderings"
+    ],
+    "related_topics": ["backtracking", "combinatorics", "sorting"],
+    "include_when": [
+      "The problem involves rearranging a collection into different possible orders.",
+      "The exact ordering of all selected elements matters to the solution."
+    ]
+  },
+  {
+    "name": "interval",
+    "parent": null,
+    "category": "pattern",
+    "description": "Problems representing ranges with start and end points and reasoning about overlap, ordering, or containment.",
+    "aliases": ["range", "segment", "time interval", "interval range"],
+    "examples": ["[start,end]", "overlapping intervals", "meeting times"],
+    "related_topics": ["merge intervals", "sorting", "interval dp", "greedy"],
+    "include_when": [
+      "The input or state is naturally represented as ranges with start and end boundaries.",
+      "Overlap, containment, ordering, or relationships between intervals are central to the solution."
+    ]
+  },
+  {
+    "name": "merge intervals",
+    "parent": "interval",
+    "category": "pattern",
+    "description": "Sorting intervals and combining overlapping or connected intervals.",
+    "aliases": ["combine overlapping intervals", "merge overlapping ranges"],
+    "examples": ["[1,3] and [2,6] become [1,6]", "sort by starting point"],
+    "related_topics": ["interval", "sorting", "greedy"],
+    "include_when": [
+      "The task requires combining overlapping or connected intervals into larger ranges.",
+      "Sorting intervals and merging ranges is central to the intended solution."
+    ]
+  },
+  {
+    "name": "fast and slow pointers",
+    "parent": "two pointers",
+    "category": "pattern",
+    "description": "Using two pointers that move at different speeds to detect cycles, find middle positions, or compare positions separated by a changing distance.",
+    "aliases": [
+      "slow and fast pointers",
+      "tortoise and hare",
+      "fast slow pointer"
+    ],
+    "examples": [
+      "slow moves one step while fast moves two steps",
+      "detect a cycle in a linked list",
+      "find the middle of a linked list"
+    ],
+    "related_topics": ["two pointers", "linked list", "cycle detection"],
+    "include_when": [
+      "The intended solution uses two pointers that move at different speeds.",
+      "One pointer advances faster than another to detect cycles, find a midpoint, or establish a positional relationship."
+    ]
+  },
+  {
+    "name": "cycle detection",
+    "parent": null,
+    "category": "pattern",
+    "description": "Determining whether repeatedly following transitions eventually revisits a previously visited state or forms a cycle.",
+    "aliases": [
+      "detect cycle",
+      "cycle detection",
+      "loop detection",
+      "find a cycle"
+    ],
+    "examples": [
+      "fast and slow pointers meet",
+      "visited state appears again",
+      "directed graph contains a cycle"
+    ],
+    "related_topics": [
+      "fast and slow pointers",
+      "graph",
+      "depth first search",
+      "hashing"
+    ],
+    "include_when": [
+      "The problem asks whether a cycle exists or requires detecting repeated states caused by transitions.",
+      "The intended solution identifies a loop in a linked list, graph, or repeated-state process."
+    ]
+  },
+  {
+    "name": "grid dp",
+    "parent": "dynamic programming",
+    "category": "pattern",
+    "description": "Dynamic programming over cells of a grid where each cell's state depends on previously processed neighboring cells.",
+    "aliases": ["grid dynamic programming", "matrix DP", "2D grid DP"],
+    "examples": [
+      "dp[i][j]",
+      "number of paths to a cell",
+      "minimum path cost in a grid"
+    ],
+    "related_topics": [
+      "two dimensional dp",
+      "state transition",
+      "breadth first search"
+    ],
+    "include_when": [
+      "The problem is represented as a grid or matrix and the intended solution computes a DP state for individual cells.",
+      "A cell's answer depends on previously computed neighboring cells or directions."
+    ]
+  },
+  {
+    "name": "bitmask",
+    "parent": "bit manipulation",
+    "category": "technique",
+    "description": "Using individual bits of an integer as boolean flags to represent membership, selections, or states.",
+    "aliases": [
+      "bit mask",
+      "bitmasking",
+      "binary mask",
+      "bitset representation"
+    ],
+    "examples": [
+      "mask & (1 << i)",
+      "mask | (1 << i)",
+      "use bits to represent selected elements"
+    ],
+    "related_topics": ["bit manipulation", "set or subset", "backtracking"],
+    "include_when": [
+      "Individual bits represent membership, choices, flags, or subsets.",
+      "Bitwise operations are used to encode multiple boolean states into an integer."
+    ]
+  },
+  {
+    "name": "XOR",
+    "parent": "bit manipulation",
+    "category": "pattern",
+    "description": "Using exclusive OR properties to compare, cancel, combine, or isolate binary states or values.",
+    "aliases": ["exclusive OR", "bitwise XOR", "xor trick"],
+    "examples": ["a ^ a = 0", "a ^ 0 = a", "use XOR to find a unique element"],
+    "related_topics": ["bit manipulation", "bitmask", "mathematics"],
+    "include_when": [
+      "XOR properties are central to deriving the solution.",
+      "Equal values cancel through XOR or XOR is used to represent a binary state relationship."
+    ]
+  },
+  {
+    "name": "trie",
+    "parent": "string",
+    "category": "technique",
+    "description": "A prefix tree where paths represent sequences of characters or symbols and shared prefixes are stored together.",
+    "aliases": ["prefix tree", "prefix trie", "digital tree"],
+    "examples": [
+      "insert a word character by character",
+      "search a prefix",
+      "trie node children"
+    ],
+    "related_topics": ["prefix matching", "string", "tree"],
+    "include_when": [
+      "The intended solution stores strings by their prefixes in a trie or prefix tree.",
+      "Efficient prefix insertion, search, or comparison is central to the algorithm."
+    ]
+  },
+  {
+    "name": "number theory",
+    "parent": "mathematics",
+    "category": "topic",
+    "description": "Problems based on properties of integers such as divisibility, primes, factors, greatest common divisors, or arithmetic structure.",
+    "aliases": ["number theory", "integer mathematics", "divisibility theory"],
+    "examples": [
+      "prime numbers",
+      "divisibility",
+      "GCD and LCM",
+      "prime factors"
+    ],
+    "related_topics": [
+      "greatest common divisor",
+      "prime factorization",
+      "modular arithmetic",
+      "mathematics"
+    ],
+    "include_when": [
+      "The main solution depends on structural properties of integers rather than ordinary arithmetic alone.",
+      "Divisibility, primes, factors, GCD, LCM, or related integer properties drive the solution."
+    ]
+  },
+  {
+    "name": "union find",
+    "parent": "graph",
+    "category": "technique",
+    "description": "A disjoint-set data structure used to maintain dynamically changing connected components.",
+    "aliases": ["DSU", "disjoint set union", "disjoint set", "union-find"],
+    "examples": [
+      "union two components",
+      "find representative",
+      "path compression",
+      "union by rank"
+    ],
+    "related_topics": ["connectivity", "graph", "cycle detection"],
+    "include_when": [
+      "The intended solution maintains sets of connected components using union and find operations.",
+      "The problem repeatedly merges groups and queries whether elements belong to the same component."
+    ]
+  },
+  {
+    "name": "feasibility check",
+    "parent": null,
+    "category": "pattern",
+    "description": "Determining whether a candidate value, configuration, or answer satisfies all required constraints.",
+    "aliases": [
+      "feasibility",
+      "validity check",
+      "possible or impossible",
+      "can this answer work"
+    ],
+    "examples": [
+      "check whether capacity X is sufficient",
+      "test whether a candidate schedule is valid",
+      "determine whether a target can be achieved"
+    ],
+    "related_topics": [
+      "binary search on answer",
+      "reachability",
+      "optimization objective",
+      "greedy"
+    ],
+    "include_when": [
+      "The algorithm repeatedly tests whether a candidate solution or answer is valid or achievable.",
+      "A feasibility predicate is used to eliminate impossible candidates or search for an optimum."
+    ]
+  },
+  {
+    "name": "parentheses matching",
+    "parent": "stack",
+    "category": "pattern",
+    "description": "Using a stack or equivalent state tracking to determine whether opening and closing parentheses or brackets are properly matched and nested.",
+    "aliases": [
+      "balanced parentheses",
+      "valid parentheses",
+      "bracket matching",
+      "balanced brackets"
+    ],
+    "examples": [
+      "()",
+      "()[]{}",
+      "push opening brackets and match them with closing brackets"
+    ],
+    "related_topics": ["stack", "string", "depth first search"],
+    "include_when": [
+      "The problem requires determining whether brackets or parentheses are properly balanced, matched, or nested.",
+      "The solution pairs opening symbols with corresponding closing symbols."
+    ]
+  },
+  {
+    "name": "interval scheduling",
+    "parent": "interval",
+    "category": "pattern",
+    "description": "Selecting or arranging intervals to maximize compatible intervals or satisfy scheduling constraints.",
+    "aliases": [
+      "interval scheduling",
+      "meeting scheduling",
+      "activity selection",
+      "non-overlapping intervals"
+    ],
+    "examples": [
+      "select the maximum number of non-overlapping intervals",
+      "choose meetings that do not conflict"
+    ],
+    "related_topics": ["interval", "greedy", "sorting", "maximize count"],
+    "include_when": [
+      "The problem requires selecting or scheduling intervals subject to overlap or compatibility constraints.",
+      "The solution reasons about which intervals can coexist without conflict."
+    ]
+  },
+  {
+    "name": "merge sort",
+    "parent": "divide and conquer",
+    "category": "technique",
+    "description": "A sorting technique that recursively divides an array into halves, sorts each half, and merges the sorted halves.",
+    "aliases": ["merge sort", "mergesort"],
+    "examples": [
+      "split array into left and right halves",
+      "merge two sorted arrays"
+    ],
+    "related_topics": ["divide and conquer", "sorting", "merge intervals"],
+    "include_when": [
+      "The intended algorithm recursively divides the array and merges sorted subarrays.",
+      "The merge operation is central to the solution."
+    ]
+  },
+  {
+    "name": "recursion",
+    "parent": null,
+    "category": "technique",
+    "description": "A technique where a function solves a problem by calling itself on smaller or simpler instances.",
+    "aliases": ["recursive solution", "recursive algorithm", "self recursion"],
+    "examples": [
+      "function calls itself",
+      "solve left subtree and right subtree recursively",
+      "base case and recursive case"
+    ],
+    "related_topics": [
+      "divide and conquer",
+      "backtracking",
+      "depth first search"
+    ],
+    "include_when": [
+      "The intended or canonical solution is fundamentally recursive and the recursive structure is a meaningful searchable characteristic.",
+  "Recursion is central to the solution rather than merely an alternative implementation.",
+  "Do not assign recursion simply because dynamic programming can be expressed using recursive memoization."
+    ]
+  },
+  {
+    "name": "combination",
+    "parent": "combinatorics",
+    "category": "pattern",
+    "description": "Selecting a collection of elements where the order of selection does not matter.",
+    "aliases": ["combinations", "choose k elements", "n choose k"],
+    "examples": [
+      "choose k elements from n",
+      "generate all combinations",
+      "select elements without considering order"
+    ],
+    "related_topics": [
+      "set or subset",
+      "permutation",
+      "backtracking",
+      "combinatorics"
+    ],
+    "include_when": [
+      "The problem asks for or constructs selections where order does not matter.",
+      "The same set of selected elements represents the same solution regardless of selection order."
+    ]
+  },
+  {
+    "name": "sorted array",
+    "parent": "array",
+    "category": "structural",
+    "description": "An array whose elements are arranged in non-decreasing or otherwise specified sorted order.",
+    "aliases": ["sorted list", "ordered array", "sorted sequence"],
+    "examples": [
+      "[1,2,3,4,5]",
+      "nums is sorted in ascending order",
+      "elements are monotonic"
+    ],
+    "related_topics": ["binary search", "two pointers", "sorting"],
+    "include_when": [
+      "The input is explicitly sorted or the intended solution first sorts it and then relies on that ordering.",
+      "Ordered values are essential to the logic of the solution."
+    ]
+  },
+  {
+    "name": "increasing subsequence",
+    "parent": "subsequence",
+    "category": "pattern",
+    "description": "A subsequence in which each selected element is greater than the previous selected element.",
+    "aliases": [
+      "increasing sequence",
+      "strictly increasing subsequence",
+      "LIS pattern"
+    ],
+    "examples": ["a[i1] < a[i2] < a[i3]", "longest increasing subsequence"],
+    "related_topics": [
+      "subsequence",
+      "subsequence dp",
+      "binary search",
+      "dynamic programming"
+    ],
+    "include_when": [
+      "The selected elements must remain in original order and satisfy a strictly increasing value relationship.",
+      "The problem asks for, counts, or optimizes an increasing subsequence."
+    ]
+  },
+  {
+    "name": "longest common subsequence",
+    "parent": "subsequence of string",
+    "category": "pattern",
+    "description": "Finding the longest sequence that appears as a subsequence in two sequences while preserving relative order.",
+    "aliases": ["LCS", "common subsequence", "longest shared subsequence"],
+    "examples": [
+      "compare two strings",
+      "dp[i][j] for prefixes of two strings",
+      "characters appear in both strings in the same order"
+    ],
+    "related_topics": [
+      "subsequence",
+      "subsequence of string",
+      "two dimensional dp"
+    ],
+    "include_when": [
+      "The problem asks for the longest subsequence common to two sequences or strings.",
+      "The relative order must be preserved in both input sequences."
+    ]
+  },
+  {
+    "name": "suffix matching",
+    "parent": "suffix",
+    "category": "pattern",
+    "description": "Problems where suffixes of strings or sequences are compared, searched, or required to match.",
+    "aliases": ["common suffix", "suffix comparison", "ends with"],
+    "examples": [
+      "compare ending characters",
+      "find a common suffix",
+      "check whether one string ends with another"
+    ],
+    "related_topics": ["suffix", "string", "prefix matching"],
+    "include_when": [
+      "The problem compares or searches suffixes of strings or sequences.",
+      "A matching ending segment is central to the condition or result."
+    ]
+  },
+  {
+    "name": "cyclic pattern",
+    "parent": null,
+    "category": "structural",
+    "description": "A repeating or wraparound relationship where positions or values cycle back to the beginning after reaching an endpoint.",
+    "aliases": ["cyclic", "circular pattern", "wraparound", "cycle pattern"],
+    "examples": [
+      "(i + k) % n",
+      "last element connects to first",
+      "repeat positions cyclically"
+    ],
+    "related_topics": ["modular arithmetic", "array", "index relationship"],
+    "include_when": [
+      "The solution treats the beginning and end as connected or uses repeating positions.",
+      "Indices or states wrap around after reaching a boundary."
+    ]
+  },
+  {
+    "name": "three sum",
+    "parent": "three indices",
+    "category": "pattern",
+    "description": "Finding three elements or indices whose values satisfy a target sum or related three-element condition.",
+    "aliases": ["3Sum", "three-sum", "three element sum"],
+    "examples": [
+      "nums[i] + nums[j] + nums[k] = target",
+      "find three numbers whose sum is zero",
+      "i < j < k"
+    ],
+    "related_topics": [
+      "three indices",
+      "two pointers",
+      "sorting",
+      "two indices"
+    ],
+    "include_when": [
+      "The problem requires selecting three elements or indices and reasoning about their combined values.",
+      "A three-element sum or equivalent three-element relationship is central to the problem."
+    ]
+  },
+  {
+  "name": "maximize length",
+  "parent": "optimization objective",
+  "category": "objective",
+  "description": "The problem asks for the maximum possible length of a valid sequence, substring, subsequence, prefix, or other structure.",
+  "aliases": [
+    "longest",
+    "maximum length",
+    "longest possible"
+  ],
+  "examples": [
+    "find the longest substring",
+    "find the longest common subsequence",
+    "return the maximum possible length"
+  ],
+  "related_topics": [],
+  "include_when": [
+    "The problem explicitly asks to maximize the length of a structure.",
+    "The length being maximized is a central objective of the problem.",
+    "Do not assign this concept merely because the answer happens to be a length."
+  ]
+}
+]

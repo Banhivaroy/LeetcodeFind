@@ -1,0 +1,472 @@
+[
+  {
+    "name": "array",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "string",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "linked list",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "tree",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "graph",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "stack",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "queue",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "hashing",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "dynamic programming",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "greedy",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "divide and conquer",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "backtracking",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "sorting",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "binary search",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "binary search on answer",
+    "category": "pattern",
+    "parent": "binary search"
+  },
+  {
+    "name": "subarray",
+    "category": "pattern",
+    "parent": "array"
+  },
+  {
+    "name": "subsequence",
+    "category": "pattern",
+    "parent": "array"
+  },
+  {
+    "name": "substring",
+    "category": "pattern",
+    "parent": "string"
+  },
+  {
+    "name": "subsequence of string",
+    "category": "pattern",
+    "parent": "string"
+  },
+  {
+    "name": "prefix",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "suffix",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "prefix sum",
+    "category": "technique",
+    "parent": "prefix"
+  },
+  {
+    "name": "suffix sum",
+    "category": "technique",
+    "parent": "suffix"
+  },
+  {
+    "name": "two pointers",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "sliding window",
+    "category": "pattern",
+    "parent": "two pointers"
+  },
+  {
+    "name": "index relationship",
+    "category": "structural",
+    "parent": null
+  },
+  {
+    "name": "mirror index",
+    "category": "pattern",
+    "parent": "index relationship"
+  },
+  {
+    "name": "adjacent indices",
+    "category": "pattern",
+    "parent": "index relationship"
+  },
+  {
+    "name": "index distance",
+    "category": "pattern",
+    "parent": "index relationship"
+  },
+  {
+    "name": "two indices",
+    "category": "pattern",
+    "parent": "index relationship"
+  },
+  {
+    "name": "three indices",
+    "category": "pattern",
+    "parent": "index relationship"
+  },
+  {
+    "name": "take or skip",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "state transition",
+    "category": "structural",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "one dimensional dp",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "two dimensional dp",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "subsequence dp",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "interval dp",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "partition dp",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "monotonic stack",
+    "category": "technique",
+    "parent": "stack"
+  },
+  {
+    "name": "next greater element",
+    "category": "pattern",
+    "parent": "monotonic stack"
+  },
+  {
+    "name": "previous greater element",
+    "category": "pattern",
+    "parent": "monotonic stack"
+  },
+  {
+    "name": "next smaller element",
+    "category": "pattern",
+    "parent": "monotonic stack"
+  },
+  {
+    "name": "previous smaller element",
+    "category": "pattern",
+    "parent": "monotonic stack"
+  },
+  {
+    "name": "frequency counting",
+    "category": "pattern",
+    "parent": "hashing"
+  },
+  {
+    "name": "duplicate detection",
+    "category": "pattern",
+    "parent": "hashing"
+  },
+  {
+    "name": "complement lookup",
+    "category": "pattern",
+    "parent": "hashing"
+  },
+  {
+    "name": "palindrome",
+    "category": "pattern",
+    "parent": "symmetry"
+  },
+  {
+    "name": "symmetry",
+    "category": "structural",
+    "parent": null
+  },
+  {
+    "name": "optimization objective",
+    "category": "objective",
+    "parent": null
+  },
+  {
+    "name": "maximize value",
+    "category": "objective",
+    "parent": "optimization objective"
+  },
+  {
+    "name": "minimize value",
+    "category": "objective",
+    "parent": "optimization objective"
+  },
+  {
+    "name": "maximize count",
+    "category": "objective",
+    "parent": "optimization objective"
+  },
+  {
+    "name": "minimize count",
+    "category": "objective",
+    "parent": "optimization objective"
+  },
+  {
+    "name": "count number of ways",
+    "category": "objective",
+    "parent": null
+  },
+  {
+    "name": "reachability",
+    "category": "objective",
+    "parent": null
+  },
+  {
+    "name": "connectivity",
+    "category": "pattern",
+    "parent": "graph"
+  },
+  {
+    "name": "shortest path",
+    "category": "pattern",
+    "parent": "graph"
+  },
+  {
+    "name": "graph traversal",
+    "category": "technique",
+    "parent": "graph"
+  },
+  {
+    "name": "depth first search",
+    "category": "technique",
+    "parent": "graph traversal"
+  },
+  {
+    "name": "breadth first search",
+    "category": "technique",
+    "parent": "graph traversal"
+  },
+  {
+    "name": "tree traversal",
+    "category": "technique",
+    "parent": "tree"
+  },
+  {
+    "name": "binary tree",
+    "category": "pattern",
+    "parent": "tree"
+  },
+  {
+    "name": "binary search tree",
+    "category": "pattern",
+    "parent": "binary tree"
+  },
+  {
+    "name": "prefix matching",
+    "category": "pattern",
+    "parent": "string"
+  },
+  {
+    "name": "modular arithmetic",
+    "category": "pattern",
+    "parent": "mathematics"
+  },
+  {
+    "name": "mathematics",
+    "category": "topic",
+    "parent": null
+  },
+  {
+    "name": "greatest common divisor",
+    "category": "pattern",
+    "parent": "mathematics"
+  },
+  {
+    "name": "prime factorization",
+    "category": "pattern",
+    "parent": "mathematics"
+  },
+  {
+    "name": "combinatorics",
+    "category": "pattern",
+    "parent": "mathematics"
+  },
+  {
+    "name": "bit manipulation",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "set or subset",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "permutation",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "interval",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "merge intervals",
+    "category": "pattern",
+    "parent": "interval"
+  },
+  {
+    "name": "fast and slow pointers",
+    "category": "pattern",
+    "parent": "two pointers"
+  },
+  {
+    "name": "cycle detection",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "grid dp",
+    "category": "pattern",
+    "parent": "dynamic programming"
+  },
+  {
+    "name": "bitmask",
+    "category": "technique",
+    "parent": "bit manipulation"
+  },
+  {
+    "name": "XOR",
+    "category": "pattern",
+    "parent": "bit manipulation"
+  },
+  {
+    "name": "trie",
+    "category": "technique",
+    "parent": "string"
+  },
+  {
+    "name": "number theory",
+    "category": "topic",
+    "parent": "mathematics"
+  },
+  {
+    "name": "union find",
+    "category": "technique",
+    "parent": "graph"
+  },
+  {
+    "name": "feasibility check",
+    "category": "pattern",
+    "parent": null
+  },
+  {
+    "name": "parentheses matching",
+    "category": "pattern",
+    "parent": "stack"
+  },
+  {
+    "name": "interval scheduling",
+    "category": "pattern",
+    "parent": "interval"
+  },
+  {
+    "name": "merge sort",
+    "category": "technique",
+    "parent": "divide and conquer"
+  },
+  {
+    "name": "recursion",
+    "category": "technique",
+    "parent": null
+  },
+  {
+    "name": "combination",
+    "category": "pattern",
+    "parent": "combinatorics"
+  },
+  {
+    "name": "sorted array",
+    "category": "structural",
+    "parent": "array"
+  },
+  {
+    "name": "increasing subsequence",
+    "category": "pattern",
+    "parent": "subsequence"
+  },
+  {
+    "name": "longest common subsequence",
+    "category": "pattern",
+    "parent": "subsequence of string"
+  },
+  {
+    "name": "suffix matching",
+    "category": "pattern",
+    "parent": "suffix"
+  },
+  {
+    "name": "cyclic pattern",
+    "category": "structural",
+    "parent": null
+  },
+  {
+    "name": "three sum",
+    "category": "pattern",
+    "parent": "three indices"
+  }
+]
