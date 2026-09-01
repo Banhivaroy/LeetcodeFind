@@ -203,22 +203,6 @@ def search_from_query(query):
         query_concepts
     )
 
-    print("\nRequired concepts:")
-
-    for concept in intent["required"]:
-        print(
-            f"- {concept['name']} "
-            f"({concept['category']})"
-        )
-
-    print("\nSupporting concepts:")
-
-    for concept in intent["supporting"]:
-        print(
-            f"- {concept['name']} "
-            f"({concept['category']})"
-        )
-
     results = search_problems_by_concepts(
         intent,
         problems
@@ -238,7 +222,9 @@ def search_from_query(query):
 # -----------------------------------------
 # Test multiple queries
 # -----------------------------------------
-if __name__ == "__main__" :
+
+if __name__ == "__main__":
+
     queries = [
         "array mirror index",
         "subsequence dynamic programming problems",
@@ -248,7 +234,6 @@ if __name__ == "__main__" :
         "two pointer array problems",
         "problems involving next greater element"
     ]
-    
 
     for query in queries:
 
@@ -256,33 +241,42 @@ if __name__ == "__main__" :
         print("QUERY:", query)
         print("=" * 60)
 
-    search_response = search_from_query(query)
+        search_response = search_from_query(query)
 
-    print("\nMatching LeetCode problems:")
+        print("\nRequired concepts:")
 
-    for result in search_response["results"][:5]:   
+        for concept in search_response["required_concepts"]:
+            print(f"- {concept}")
 
-        print(
-            f"\nScore: {result['score']:.2f}"
-        )
+        print("\nSupporting concepts:")
 
-        print(
-            f"Problem: {result['title']}"
-        )
+        for concept in search_response["supporting_concepts"]:
+            print(f"- {concept}")
 
-        print(
-            f"Difficulty: {result['difficulty']}"
-        )
+        print("\nMatching LeetCode problems:")
 
-        print(
-            f"LeetCode: {result['url']}"
-        )
-
-        print("Matched concepts:")
-
-        for concept in result["matched_concepts"]:
+        for result in search_response["results"][:5]:
 
             print(
-                f"  - {concept['name']} "
-                f"({concept['category']})"
+                f"\nScore: {result['score']:.2f}"
             )
+
+            print(
+                f"Problem: {result['title']}"
+            )
+
+            print(
+                f"Difficulty: {result['difficulty']}"
+            )
+
+            print(
+                f"LeetCode: {result['url']}"
+            )
+
+            print("Matched concepts:")
+
+            for concept in result["matched_concepts"]:
+                print(
+                    f"  - {concept['name']} "
+                    f"({concept['category']})"
+                )
