@@ -23,7 +23,7 @@ export default function SearchPage() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/search", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
