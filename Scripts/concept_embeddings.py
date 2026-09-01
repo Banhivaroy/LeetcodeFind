@@ -1,12 +1,16 @@
 import json
-import numpy as np
+from pathlib import Path
 
+import numpy as np
 from sentence_transformers import SentenceTransformer
 
 
-CONCEPTS_FILE = "../Data/Processed/Concepts.json"
-EMBEDDINGS_FILE = "../Data/Processed/concept_embeddings.npy"
-METADATA_FILE = "../Data/Processed/concept_metadata.json"
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "Data" / "Processed"
+
+CONCEPTS_FILE = DATA_DIR / "Concepts.json"
+EMBEDDINGS_FILE = DATA_DIR / "concept_embeddings.npy"
+METADATA_FILE = DATA_DIR / "concept_metadata.json"
 
 
 # --------------------------------------------------
@@ -46,7 +50,7 @@ concept_texts = [
 print("Loading embedding model...")
 
 model = SentenceTransformer(
-    "sentence-transformers/multi-qa-mpnet-base-cos-v1"
+     "sentence-transformers/all-MiniLM-L6-v2"
 )
 
 

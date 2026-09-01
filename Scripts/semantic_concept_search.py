@@ -38,7 +38,7 @@ with open(METADATA_FILE, "r", encoding="utf-8") as f:
 # -----------------------------------------
 
 model = SentenceTransformer(
-    "sentence-transformers/multi-qa-mpnet-base-cos-v1"
+     "sentence-transformers/all-MiniLM-L6-v2"
 )
 
 
@@ -256,11 +256,11 @@ if __name__ == "__main__" :
         print("QUERY:", query)
         print("=" * 60)
 
-    results = search_from_query(query)
+    search_response = search_from_query(query)
 
     print("\nMatching LeetCode problems:")
 
-    for result in results[:5]:
+    for result in search_response["results"][:5]:   
 
         print(
             f"\nScore: {result['score']:.2f}"

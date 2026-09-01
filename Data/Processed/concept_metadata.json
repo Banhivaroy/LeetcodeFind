@@ -468,5 +468,10 @@
     "name": "three sum",
     "category": "pattern",
     "parent": "three indices"
+  },
+  {
+    "name": "maximize length",
+    "category": "objective",
+    "parent": "optimization objective"
   }
 ]
