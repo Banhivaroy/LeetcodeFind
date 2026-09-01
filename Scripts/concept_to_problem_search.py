@@ -5,7 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "Data" / "Processed"
 
-CONCEPTS_FILE = DATA_DIR / "concepts.json"
+CONCEPTS_FILE = DATA_DIR / "Concepts.json"
 CLASSIFIED_FILE = DATA_DIR / "classified_problems.json"
 
 
