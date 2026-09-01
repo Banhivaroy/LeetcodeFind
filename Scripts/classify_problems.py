@@ -11,7 +11,7 @@ from google.genai import errors
 # --------------------------------------------------
 
 PROBLEMS_FILE = "../Data/Processed/Problems.json"
-CONCEPTS_FILE = "../Data/Processed/concepts.json"
+CONCEPTS_FILE = "../Data/Processed/Concepts.json"
 
 
 OUTPUT_FILE = "../Data/Processed/classified_problems.json"

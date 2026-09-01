@@ -1,6 +1,6 @@
 import json
 
-CONCEPTS_FILE = "../Data/Processed/concepts.json"
+CONCEPTS_FILE = "../Data/Processed/Concepts.json"
 CLASSIFIED_FILE = "../Data/Processed/classified_problems.json"
 
 

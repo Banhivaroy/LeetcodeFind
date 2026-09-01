@@ -4,7 +4,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 
-CONCEPTS_FILE = "../Data/Processed/concepts.json"
+CONCEPTS_FILE = "../Data/Processed/Concepts.json"
 EMBEDDINGS_FILE = "../Data/Processed/concept_embeddings.npy"
 METADATA_FILE = "../Data/Processed/concept_metadata.json"
 

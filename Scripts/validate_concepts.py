@@ -1,6 +1,6 @@
 import json
 
-CONCEPTS_FILE = "../Data/Processed/concepts.json"
+CONCEPTS_FILE = "../Data/Processed/Concepts.json"
 
 with open(CONCEPTS_FILE, "r", encoding="utf-8") as f:
     concepts = json.load(f)
