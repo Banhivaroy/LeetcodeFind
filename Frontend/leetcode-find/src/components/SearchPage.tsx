@@ -38,6 +38,9 @@ export default function SearchPage() {
       }
 
       const data = await response.json();
+      navigate("/results", {
+        state: data,
+      }); 
 
       setRequiredConcepts(data.required_concepts || []);
 
