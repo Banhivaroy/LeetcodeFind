@@ -19,7 +19,36 @@ with open(CONCEPTS_FILE, "r", encoding="utf-8") as f:
 with open(CLASSIFIED_FILE, "r", encoding="utf-8") as f:
     problems = json.load(f)
 
+concept_lookup = {
+    concept["name"]: concept
+    for concept in concepts
+}
 
+# -----------------------------------------
+# Get concept path
+# -----------------------------------------
+
+def get_concept_path(concept_name):
+
+    path = []
+
+    current_name = concept_name
+    visited = set()
+
+    while current_name and current_name not in visited:
+
+        visited.add(current_name)
+
+        concept = concept_lookup.get(current_name)
+
+        if not concept:
+            break
+
+        path.append(current_name)
+
+        current_name = concept.get("parent")
+
+    return list(reversed(path))
 # -----------------------------------------
 # Get all concepts for a problem
 # -----------------------------------------
@@ -39,7 +68,8 @@ def get_problem_concepts(problem):
 
             result.append({
                 "name": concept["name"],
-                "category": category
+                "category": category,
+                "parent" :concept.get("parent")
             })
 
     return result

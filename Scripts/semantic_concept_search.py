@@ -1,8 +1,12 @@
 import json
 import numpy as np
-from Scripts.concept_to_problem_search import search_problems_by_concepts
+from Scripts.concept_to_problem_search import (
+    search_problems_by_concepts,
+    get_concept_path
+)
 from sentence_transformers import SentenceTransformer
 from Scripts.query_intent import determine_query_intent
+
 
 
 from pathlib import Path
@@ -208,6 +212,25 @@ def search_from_query(query):
         problems
     )
 
+    # Build hierarchy paths for detected concepts
+    concept_paths = []
+
+    for concept in (
+        intent["required"] +
+        intent["supporting"]
+    ):
+
+        path = get_concept_path(
+            concept["name"]
+        )
+
+        if path:
+            concept_paths.append({
+                "concept": concept["name"],
+                "category": concept["category"],
+                "path": path
+            })
+
     return {
         "required_concepts": [
             concept["name"]
@@ -217,6 +240,7 @@ def search_from_query(query):
             concept["name"]
             for concept in intent["supporting"]
         ],
+        "concept_paths": concept_paths,
         "results": results
     }
 # -----------------------------------------

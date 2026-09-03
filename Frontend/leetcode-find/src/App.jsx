@@ -3,6 +3,7 @@ import Hero01 from "./components/originkit/hero-01"
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
 import SearchPage from "./components/SearchPage";
+import ResponsePage from "./components/ResponsePage";
 
 function App() {
  
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path = "/" element =  {<Hero01/>}/>
         <Route path = "/search" element = {<SearchPage/>}/>
+        <Route path = "/results" element = {<ResponsePage/>}/>
       </Routes>
     </>
   )
