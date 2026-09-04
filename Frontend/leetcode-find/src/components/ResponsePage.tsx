@@ -1,5 +1,15 @@
+import {
+  type Dispatch,
+  type SetStateAction,
+} from "react";
+
 import { useLocation, useNavigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ExternalLink, Search } from "lucide-react";
+import {
+  ArrowLeft,
+  ExternalLink,
+  Search,
+  ArrowRight,
+} from "lucide-react";
 
 interface MatchedConcept {
   name: string;
@@ -29,7 +39,15 @@ interface SearchResponse {
   results?: ProblemResult[];
 }
 
-export default function ResponsePage() {
+interface ResponsePageProps {
+  darkMode: boolean;
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function ResponsePage({
+  darkMode,
+  setDarkMode,
+}: ResponsePageProps) {
   const location = useLocation();
   const navigate = useNavigate();
 
