@@ -1,15 +1,7 @@
-import {
-  type Dispatch,
-  type SetStateAction,
-} from "react";
+import { type Dispatch, type SetStateAction } from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  ArrowLeft,
-  ExternalLink,
-  Search,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowLeft, ExternalLink, Search, ArrowRight } from "lucide-react";
 
 interface MatchedConcept {
   name: string;
@@ -59,7 +51,12 @@ export default function ResponsePage({
 
   if (!data) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-black px-6 text-white">
+      <div
+        className={`
+    flex min-h-screen items-center justify-center px-6
+    ${darkMode ? "bg-black text-white" : "bg-white text-slate-900"}
+  `}
+      >
         <div className="text-center">
           <Search size={40} className="mx-auto mb-5 text-[#FFA116]" />
 
@@ -70,7 +67,7 @@ export default function ResponsePage({
           </p>
 
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/search")}
             className="
               mt-6
               inline-flex
@@ -115,13 +112,25 @@ export default function ResponsePage({
 
   return (
     <div
-      className="
-        min-h-screen
-        bg-black
-        text-white
-        [background-image:linear-gradient(to_right,_rgba(255,_255,_255,_0.12)_1px,_transparent_1px),_linear-gradient(to_bottom,_rgba(255,_255,_255,_0.12)_1px,_transparent_1px)]
-        [background-size:35px_35px]
-      "
+      className={`
+    min-h-screen
+    transition-colors
+    duration-300
+    ${
+      darkMode
+        ? `
+          bg-black
+          text-white
+          [background-image:linear-gradient(to_right,_rgba(255,_255,_255,_0.12)_1px,_transparent_1px),_linear-gradient(to_bottom,_rgba(255,_255,_255,_0.12)_1px,_transparent_1px)]
+        `
+        : `
+          bg-white
+          text-slate-900
+          [background-image:linear-gradient(to_right,_rgba(0,_0,_0,_0.08)_1px,_transparent_1px),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.08)_1px,_transparent_1px)]
+        `
+    }
+    [background-size:35px_35px]
+  `}
     >
       {/* --------------------------------------------------
           Navbar
@@ -132,15 +141,18 @@ export default function ResponsePage({
 
         <button
           onClick={() => navigate("/search")}
-          className="
-            flex
-            items-center
-            gap-2
-            text-sm
-            text-slate-300
-            transition
-            hover:text-white
-          "
+          className={`
+  flex
+  items-center
+  gap-2
+  text-sm
+  transition
+  ${
+    darkMode
+      ? "text-slate-300 hover:text-white"
+      : "text-slate-600 hover:text-black"
+  }
+`}
         >
           <ArrowLeft size={18} />
           New Search
@@ -230,28 +242,34 @@ export default function ResponsePage({
                           className="flex items-center gap-3"
                         >
                           <span
-                            className={`
-                      rounded-full
-                      border
-                      px-4
-                      py-2
-                      text-sm
-                      font-medium
-                      transition-colors
-                      ${
-                        isLast
-                          ? `
-                            border-[#FFA116]/30
-                            bg-[#FFA116]/15
-                            text-[#FFA116]
-                          `
-                          : `
-                            border-slate-700
-                            bg-[#111111]
-                            text-slate-300
-                          `
-                      }
-                    `}
+                           className={`
+  rounded-full
+  border
+  px-4
+  py-2
+  text-sm
+  font-medium
+  transition-colors
+  ${
+    isLast
+      ? `
+        border-[#FFA116]/30
+        bg-[#FFA116]/15
+        text-[#FFA116]
+      `
+      : darkMode
+        ? `
+          border-slate-700
+          bg-[#111111]
+          text-slate-300
+        `
+        : `
+          border-slate-300
+          bg-slate-100
+          text-slate-700
+        `
+  }
+`}
                           >
                             {concept}
                           </span>
@@ -293,15 +311,18 @@ export default function ResponsePage({
 
           {results.length === 0 ? (
             <div
-              className="
-                rounded-2xl
-                border
-                border-slate-800
-                bg-[#0d0d0d]
-                px-6
-                py-14
-                text-center
-              "
+className={`
+  rounded-2xl
+  border
+  px-6
+  py-14
+  text-center
+  ${
+    darkMode
+      ? "border-slate-800 bg-[#0d0d0d]"
+      : "border-slate-200 bg-slate-50"
+  }
+`}
             >
               <Search size={36} className="mx-auto mb-4 text-slate-500" />
 
@@ -314,7 +335,7 @@ export default function ResponsePage({
               </p>
 
               <button
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/search")}
                 className="
                   mt-6
                   rounded-full
@@ -336,20 +357,30 @@ export default function ResponsePage({
               {results.map((result, index) => (
                 <article
                   key={`${result.url}-${index}`}
-                  className="
-                    rounded-2xl
-                    border
-                    border-slate-800
-                    bg-[#111111]
-                    p-6
-                    shadow-lg
-                    transition-all
-                    duration-200
-                    hover:-translate-y-0.5
-                    hover:border-slate-600
-                    hover:shadow-2xl
-                    md:p-7
-                  "
+                  className={`
+  rounded-2xl
+  border
+  p-6
+  shadow-lg
+  transition-all
+  duration-200
+  hover:-translate-y-0.5
+  hover:shadow-2xl
+  md:p-7
+  ${
+    darkMode
+      ? `
+        border-slate-800
+        bg-[#111111]
+        hover:border-slate-600
+      `
+      : `
+        border-slate-200
+        bg-white
+        hover:border-slate-300
+      `
+  }
+`}
                 >
                   {/* Top row */}
 
@@ -367,19 +398,22 @@ export default function ResponsePage({
                       {/* Rank */}
 
                       <div
-                        className="
-                          flex
-                          h-10
-                          w-10
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-full
-                          bg-white/8
-                          text-sm
-                          font-bold
-                          text-slate-300
-                        "
+                        className={`
+  flex
+  h-10
+  w-10
+  shrink-0
+  items-center
+  justify-center
+  rounded-full
+  text-sm
+  font-bold
+  ${
+    darkMode
+      ? "bg-white/8 text-slate-300"
+      : "bg-slate-100 text-slate-600"
+  }
+`}
                       >
                         #{index + 1}
                       </div>
@@ -391,9 +425,11 @@ export default function ResponsePage({
                           {result.title}
                         </h3>
 
-                        <p className="mt-2 text-sm text-slate-400">
+                        <p className={`mt-2 text-sm ${
+    darkMode ? "text-slate-400" : "text-slate-500"
+  }`}>
                           Relevance score:{" "}
-                          <span className="text-slate-300">
+                          <span className={darkMode ? "text-slate-300" : "text-slate-700"}>
                             {result.score.toFixed(2)}
                           </span>
                         </p>
@@ -428,14 +464,17 @@ export default function ResponsePage({
                           (concept, conceptIndex) => (
                             <span
                               key={`${result.url}-${concept.name}-${conceptIndex}`}
-                              className="
-                                rounded-full
-                                bg-white/8
-                                px-3
-                                py-1.5
-                                text-sm
-                                text-slate-300
-                              "
+                              className={`
+  rounded-full
+  px-3
+  py-1.5
+  text-sm
+  ${
+    darkMode
+      ? "bg-white/8 text-slate-300"
+      : "bg-slate-100 text-slate-700"
+  }
+`}
                             >
                               {concept.name}
                             </span>
