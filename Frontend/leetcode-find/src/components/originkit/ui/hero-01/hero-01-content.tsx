@@ -7,14 +7,13 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import SpotlightReveal from "@/components/originkit/ui/hero-01/spotlight-reveal";
 import TrustedBy from "@/components/originkit/ui/hero-01/trusted-by";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import SearchPage from "@/components/SearchPage";
 
 /** Public asset URLs — use a function so preview rewriters stay stable. */
 function asset(file: string) {
   return `/originkit/hero-01/${file}`;
 }
-
 
 const TRUSTED_LOGOS = [
   // {
@@ -92,8 +91,6 @@ const MenuIcon = () => {
   );
 };
 
-
-
 const PREVIEW_IMAGE_CLASSNAME =
   "m-0 mx-auto block w-full object-top p-0 h-[300px] md:h-[320px] ipad:h-auto [mask-image:linear-gradient(to_bottom,black_0%,black_68%,rgba(0,0,0,0.45)_84%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_68%,rgba(0,0,0,0.45)_84%,transparent_100%)]";
 
@@ -135,8 +132,6 @@ const BrowserPreview = ({ active }: { active: boolean }) => {
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-24 bg-linear-to-t from-[#f4f0e8] from-0% via-[#f4f0e8]/85 via-30% to-transparent ipad:h-28 laptop:h-32"
           />
-
-          
         </div>
       </div>
     </motion.div>
@@ -244,64 +239,19 @@ const Hero01Content = () => {
           >
             <a
               href="#main"
-              className="flex shrink-0 items-center gap-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#010110] ipad:gap-1.5"
+              className="flex w-full items-center justify-center gap-1.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#010110]"
               aria-label="OnChat home"
             >
-              <img
-                alt=""
-                aria-hidden="true"
-                src={asset("logo-mark.svg")}
-                width={24}
-                height={24}
-                className="size-5 ipad:size-6"
-              />
-              <span className="font-geist text-[1.125rem] font-medium leading-none text-black ipad:text-[1.35rem]">
+              <span className="font-Kanit text-[1.125rem]  font-medium leading-none text-black ipad:text-[1.35rem] pl-4">
                 LeetcodeFind
               </span>
             </a>
 
-            <nav
+            {/* <nav
               aria-label="Primary"
               className="flex items-center gap-3 ipad:gap-6"
             >
-              <a
-                href="#login"
-                className="text-sm font-medium leading-none text-[#363636] transition-colors duration-200 ease focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#010110] ipad:text-[15px] [@media(hover:hover)_and_(pointer:fine)]:hover:text-black"
-              >
-                Login
-              </a>
-
-              <a
-                href="#contact"
-                className="relative hidden min-h-11 items-center justify-center overflow-clip rounded-[41px] border border-solid border-[#57565f] px-5 py-3 text-center text-[15px] font-medium leading-[19.6px] text-white transition-[opacity,transform] duration-200 ease focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#010110] active:scale-[0.96] motion-reduce:active:scale-100 ipad:inline-flex [@media(hover:hover)_and_(pointer:fine)]:hover:opacity-90"
-                style={{
-                  boxShadow:
-                    "0 4px 7.7px rgba(0,0,0,0.05), 0 10px 24px rgba(0,0,0,0.05), 0 24px 40.8px rgba(0,0,0,0.15), 0 25px 18.7px rgba(0,0,0,0.05), 0 52px 41.4px rgba(0,0,0,0.05)",
-                }}
-              >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 rounded-[41px]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(90deg, #000002, #000002), radial-gradient(ellipse 170px 258px at 50% -198px, rgba(237,239,255,0.71) 0%, rgba(237,239,255,0) 100%), linear-gradient(123.39deg, #1f1f21 0%, #3e3d4c 34%, #1f1f21 51%, #3e3d4c 72%, #1f1f21 100%)",
-                  }}
-                />
-                <span className="relative">Contact Us</span>
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 rounded-[41px] shadow-[inset_0_5px_8px_rgba(255,255,255,0.05),inset_0_1px_1px_rgba(255,255,255,0.25)]"
-                />
-              </a>
-
-              <button
-                type="button"
-                aria-label="Open menu"
-                className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#111] text-white shadow-[0_4px_12px_rgba(0,0,0,0.18)] transition-[opacity,transform] duration-200 ease focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#010110] active:scale-[0.96] motion-reduce:active:scale-100 ipad:hidden [@media(hover:hover)_and_(pointer:fine)]:hover:opacity-90"
-              >
-                {/* <MenuIcon /> */}
-              </button>
-            </nav>
+            </nav> */}
           </motion.header>
 
           <div
@@ -311,7 +261,7 @@ const Hero01Content = () => {
             <div className="flex w-full flex-col items-center gap-3 ipad:gap-3.5">
               <SpotlightReveal
                 id="onchat-hero-heading"
-                text="Task Management Made Simple and Powerful"
+                text="Find The Perfect Problem for Your Coding Journey"
                 blur={6}
                 delay={0}
                 active={showHero}
@@ -326,8 +276,7 @@ const Hero01Content = () => {
                 className="max-w-118.75 will-change-transform"
               >
                 <p className="px-1 text-[clamp(15px,2.5vw,16px)] font-medium leading-normal tracking-[-0.02em] text-pretty text-[#45545e] ipad:px-0">
-                  We optimize for the single statistic that matters: Amount of
-                  real-world tasks a model can solve
+                 In-depth concept analysis makes your preparation better 
                 </p>
               </SlideIn>
             </div>
@@ -345,7 +294,6 @@ const Hero01Content = () => {
               >
                 Get Started
               </button>
-              
             </SlideIn>
           </div>
 

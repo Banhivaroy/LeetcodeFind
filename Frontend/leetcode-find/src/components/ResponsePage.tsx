@@ -1,10 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ExternalLink,
-  Search,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Search } from "lucide-react";
 
 interface MatchedConcept {
   name: string;
@@ -48,14 +43,9 @@ export default function ResponsePage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-black px-6 text-white">
         <div className="text-center">
-          <Search
-            size={40}
-            className="mx-auto mb-5 text-[#FFA116]"
-          />
+          <Search size={40} className="mx-auto mb-5 text-[#FFA116]" />
 
-          <h1 className="text-2xl font-bold">
-            No search results
-          </h1>
+          <h1 className="text-2xl font-bold">No search results</h1>
 
           <p className="mt-2 text-slate-400">
             Start a search to find relevant LeetCode problems.
@@ -98,11 +88,11 @@ export default function ResponsePage() {
     (conceptPath, index, paths) => {
       const currentPath = conceptPath.path.join(">");
       const firstIndex = paths.findIndex(
-        (path) => path.path.join(">") === currentPath
+        (path) => path.path.join(">") === currentPath,
       );
 
       return firstIndex === index;
-    }
+    },
   );
 
   return (
@@ -120,12 +110,10 @@ export default function ResponsePage() {
       -------------------------------------------------- */}
 
       <nav className="flex items-center justify-between px-8 py-6 md:px-12">
-        <div className="text-xl font-bold">
-          LeetCodeFind
-        </div>
+        <div className="text-xl font-bold">LeetCodeFind</div>
 
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/search")}
           className="
             flex
             items-center
@@ -167,86 +155,101 @@ export default function ResponsePage() {
         </section>
 
         {/* --------------------------------------------------
-            Detected Concepts
-        -------------------------------------------------- */}
+          Detected Concepts
+          -------------------------------------------------- */}
 
         {uniqueConceptPaths.length > 0 && (
           <section className="mt-10">
-            <div className="rounded-2xl border border-slate-800 bg-[#0d0d0d]/90 p-6">
-              <h2 className="mb-6 text-lg font-semibold">
-                Detected Concepts
-              </h2>
+            <h2 className="mb-6 text-lg font-semibold">Detected Concepts :</h2>
 
-              <div className="space-y-5">
-                {uniqueConceptPaths.map(
-                  (conceptPath, pathIndex) => (
-                    <div
-                      key={`${conceptPath.concept}-${pathIndex}`}
+            {/* Main parent / root concepts */}
+            <div className="mb-8 flex flex-wrap justify-center gap-6">
+              {uniqueConceptPaths
+                .filter((conceptPath) => conceptPath.path.length === 1)
+                .map((conceptPath) => {
+                  const rootConcept =
+                    conceptPath.path[0] ?? conceptPath.concept;
+
+                  const displayName =
+                    rootConcept.charAt(0).toUpperCase() + rootConcept.slice(1);
+
+                  return (
+                    <span
+                      key={conceptPath.concept}
                       className="
-                        flex
-                        flex-wrap
-                        items-center
-                        justify-center
-                        gap-3
-                      "
+            text-2xl
+            font-bold
+            text-[#FFA116]
+          "
                     >
-                      {conceptPath.path.map(
-                        (concept, index) => {
-                          const isLast =
-                            index ===
-                            conceptPath.path.length - 1;
+                      {displayName}
+                    </span>
+                  );
+                })}
+            </div>
 
-                          return (
-                            <div
-                              key={`${conceptPath.concept}-${concept}-${index}`}
-                              className="
-                                flex
-                                items-center
-                                gap-3
-                              "
-                            >
-                              <span
-                                className={`
-                                  rounded-full
-                                  border
-                                  px-4
-                                  py-2
-                                  text-sm
-                                  font-medium
-                                  transition-colors
-                                  ${
-                                    isLast
-                                      ? `
-                                        border-[#FFA116]/30
-                                        bg-[#FFA116]/15
-                                        text-[#FFA116]
-                                      `
-                                      : `
-                                        border-slate-700
-                                        bg-[#111111]
-                                        text-slate-300
-                                      `
-                                  }
-                                `}
-                              >
-                                {concept}
-                              </span>
+            {/* Child concept flows */}
+            <div className="space-y-5">
+              {uniqueConceptPaths
+                .filter((conceptPath) => conceptPath.path.length > 1)
+                .map((conceptPath, pathIndex) => (
+                  <div
+                    key={`${conceptPath.concept}-${pathIndex}`}
+                    className="
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-3
+            "
+                  >
+                    {conceptPath.path.map((concept, index) => {
+                      const isLast = index === conceptPath.path.length - 1;
 
-                              {!isLast && (
-                                <ArrowRight
-                                  size={18}
-                                  strokeWidth={2}
-                                  className="text-slate-500"
-                                />
-                              )}
-                            </div>
-                          );
-                        }
-                      )}
-                    </div>
-                  )
-                )}
-              </div>
+                      return (
+                        <div
+                          key={`${conceptPath.concept}-${concept}-${index}`}
+                          className="flex items-center gap-3"
+                        >
+                          <span
+                            className={`
+                      rounded-full
+                      border
+                      px-4
+                      py-2
+                      text-sm
+                      font-medium
+                      transition-colors
+                      ${
+                        isLast
+                          ? `
+                            border-[#FFA116]/30
+                            bg-[#FFA116]/15
+                            text-[#FFA116]
+                          `
+                          : `
+                            border-slate-700
+                            bg-[#111111]
+                            text-slate-300
+                          `
+                      }
+                    `}
+                          >
+                            {concept}
+                          </span>
+
+                          {!isLast && (
+                            <ArrowRight
+                              size={20}
+                              strokeWidth={2}
+                              className="text-slate-500"
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
             </div>
           </section>
         )}
@@ -262,10 +265,7 @@ export default function ResponsePage() {
             </h2>
 
             <span className="text-sm text-slate-500">
-              {results.length}{" "}
-              {results.length === 1
-                ? "problem"
-                : "problems"}
+              {results.length} {results.length === 1 ? "problem" : "problems"}
             </span>
           </div>
 
@@ -285,18 +285,14 @@ export default function ResponsePage() {
                 text-center
               "
             >
-              <Search
-                size={36}
-                className="mx-auto mb-4 text-slate-500"
-              />
+              <Search size={36} className="mx-auto mb-4 text-slate-500" />
 
               <h3 className="text-xl font-semibold">
                 No matching problems found
               </h3>
 
               <p className="mt-2 text-slate-500">
-                Try describing the algorithm, pattern, or
-                technique differently.
+                Try describing the algorithm, pattern, or technique differently.
               </p>
 
               <button
@@ -425,7 +421,7 @@ export default function ResponsePage() {
                             >
                               {concept.name}
                             </span>
-                          )
+                          ),
                         )}
                       </div>
                     </div>

@@ -3,10 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { Home, ArrowRight, Moon, Sun, Search } from "lucide-react";
 import Loader from "./Loader";
 
-export default function SearchPage() {
-  const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(false);
+interface SearchPageProps {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+export default function SearchPage({
+  darkMode,
+  setDarkMode,
+}: SearchPageProps) {
+
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
 
@@ -86,7 +93,7 @@ export default function SearchPage() {
             className={`
               mt-8
               text-2xl
-              font-bold
+              font-thin
               ${
                 darkMode
                   ? "text-white"
@@ -97,19 +104,6 @@ export default function SearchPage() {
             Finding relevant problems...
           </h2>
 
-          <p
-            className={`
-              mt-2
-              text-sm
-              ${
-                darkMode
-                  ? "text-slate-400"
-                  : "text-slate-500"
-              }
-            `}
-          >
-            Analyzing your query and searching the problem database.
-          </p>
         </div>
       </div>
     ) : (
@@ -121,7 +115,7 @@ export default function SearchPage() {
         <nav className="flex items-center justify-between px-10 py-6">
           {/* Logo */}
           <div
-            className={`text-xl font-bold ${
+            className={`text-xl font-Kanit font-medium text-[1.125rem] text-black ${
               darkMode
                 ? "text-white"
                 : "text-slate-900"
@@ -211,7 +205,7 @@ export default function SearchPage() {
                 Find the right
                 <span className="text-[#FFA116]">
                   {" "}
-                  LeetCode problem for yourself
+                  LeetCode problem 
                 </span>
               </h1>
 
@@ -229,7 +223,7 @@ export default function SearchPage() {
                   }
                 `}
               >
-                Describe the problem you're trying to solve
+                Describe the concept you're trying to solve
                 and discover relevant LeetCode questions using
                 semantic search.
               </p>
@@ -272,7 +266,7 @@ export default function SearchPage() {
 
                 <input
                   type="text"
-                  placeholder="Describe the problem you're trying to solve..."
+                  placeholder="Describe the concept you're looking for..."
                   className={`
                     flex-1
                     bg-transparent
@@ -347,7 +341,7 @@ export default function SearchPage() {
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <button
                   onClick={() =>
-                    setQuery("Two Sum")
+                    setQuery("Mirror Index")
                   }
                   className={`
                     rounded-full
@@ -374,12 +368,12 @@ export default function SearchPage() {
                     }
                   `}
                 >
-                  Two Sum
+                  Mirror Index
                 </button>
 
                 <button
                   onClick={() =>
-                    setQuery("Sliding Window")
+                    setQuery("Math")
                   }
                   className={`
                     rounded-full
@@ -406,7 +400,7 @@ export default function SearchPage() {
                     }
                   `}
                 >
-                  Sliding Window
+                  Math
                 </button>
 
                 <button
@@ -444,10 +438,7 @@ export default function SearchPage() {
             </div>
 
             {/* Bottom hint */}
-            <p className="mt-12 text-sm text-slate-500">
-              Try describing an algorithm, data structure,
-              or problem concept.
-            </p>
+            
           </div>
         </main>
       </>

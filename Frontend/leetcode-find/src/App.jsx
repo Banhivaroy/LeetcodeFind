@@ -7,13 +7,22 @@ import ResponsePage from "./components/ResponsePage";
 
 function App() {
  
-
+  const [darkMode,setDarkMode] = useState(false);
   return (
     <>
       <Routes>
         <Route path = "/" element =  {<Hero01/>}/>
-        <Route path = "/search" element = {<SearchPage/>}/>
-        <Route path = "/results" element = {<ResponsePage/>}/>
+        <Route path = "/search" element = {
+          <SearchPage
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          />
+          }/>
+        <Route path = "/results" element = {
+          <ResponsePage
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />}/>
       </Routes>
     </>
   )
