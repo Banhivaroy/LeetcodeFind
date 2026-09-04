@@ -49,6 +49,19 @@ def get_concept_path(concept_name):
         current_name = concept.get("parent")
 
     return list(reversed(path))
+
+def concept_matches_required(concept_name, required_concepts):
+    """
+    Check whether a problem concept belongs to any required
+    concept through its parent hierarchy.
+    """
+
+    concept_path = get_concept_path(concept_name)
+
+    return any(
+        required_concept in concept_path
+        for required_concept in required_concepts
+    )
 # -----------------------------------------
 # Get all concepts for a problem
 # -----------------------------------------

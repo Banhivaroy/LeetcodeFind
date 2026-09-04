@@ -1,8 +1,9 @@
 import json
 import numpy as np
-from Scripts.concept_to_problem_search import (
-    search_problems_by_concepts,
-    get_concept_path
+from Scripts.concept_to_problem_search import ( 
+    search_problems_by_concepts, 
+    get_concept_path,
+    concept_matches_required
 )
 from sentence_transformers import SentenceTransformer
 from Scripts.query_intent import determine_query_intent
@@ -195,53 +196,86 @@ def get_query_concepts(
 # -----------------------------------------
 #   search from query
 # -----------------------------------------
-def search_from_query(query):
+def search_from_query(query): 
 
-    query_concepts = get_query_concepts(
-        query,
-        top_k=5
+    query_concepts = get_query_concepts( 
+        query, 
+        top_k=5 
+    ) 
+
+    intent = determine_query_intent( 
+        query, 
+        query_concepts 
+    ) 
+
+    results = search_problems_by_concepts( 
+        intent, 
+        problems 
     )
 
-    intent = determine_query_intent(
-        query,
-        query_concepts
-    )
+    # -----------------------------------------
+    # Hard filter for required concepts
+    # -----------------------------------------
 
-    results = search_problems_by_concepts(
-        intent,
-        problems
-    )
+    required_concepts = {
+        concept["name"]
+        for concept in intent["required"]
+    }
+
+    if required_concepts:
+        filtered_results = []
+
+        for result in results:
+            matched_concepts = result.get(
+                "matched_concepts",
+                []
+            )
+
+            valid = False
+
+            for concept in matched_concepts:
+                if concept_matches_required(
+                    concept["name"],
+                    required_concepts
+                ):
+                    valid = True
+                    break
+
+            if valid:
+                filtered_results.append(result)
+
+        results = filtered_results
 
     # Build hierarchy paths for detected concepts
-    concept_paths = []
+    concept_paths = [] 
 
-    for concept in (
-        intent["required"] +
-        intent["supporting"]
-    ):
+    for concept in ( 
+        intent["required"] + 
+        intent["supporting"] 
+    ): 
 
-        path = get_concept_path(
-            concept["name"]
-        )
+        path = get_concept_path( 
+            concept["name"] 
+        ) 
 
-        if path:
-            concept_paths.append({
-                "concept": concept["name"],
-                "category": concept["category"],
-                "path": path
-            })
+        if path: 
+            concept_paths.append({ 
+                "concept": concept["name"], 
+                "category": concept["category"], 
+                "path": path 
+            }) 
 
-    return {
-        "required_concepts": [
-            concept["name"]
-            for concept in intent["required"]
-        ],
-        "supporting_concepts": [
-            concept["name"]
-            for concept in intent["supporting"]
-        ],
-        "concept_paths": concept_paths,
-        "results": results
+    return { 
+        "required_concepts": [ 
+            concept["name"] 
+            for concept in intent["required"] 
+        ], 
+        "supporting_concepts": [ 
+            concept["name"] 
+            for concept in intent["supporting"] 
+        ], 
+        "concept_paths": concept_paths, 
+        "results": results 
     }
 # -----------------------------------------
 # Test multiple queries
