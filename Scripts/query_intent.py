@@ -67,12 +67,33 @@ def determine_query_intent(
         ):
             explicit_techniques.append(concept)
 
+    # --------------------------------------------------
+    # 4. Explicitly mentioned topics
+    # --------------------------------------------------
 
+    explicit_topics = []
+
+    for concept in query_concepts:
+
+        name = concept["name"].lower()
+
+        if (
+            concept["category"] == "topic"
+            and name in query_lower
+        ):
+            explicit_topics.append(concept)
     # --------------------------------------------------
     # Choose required concepts
     # --------------------------------------------------
 
-    if explicit_patterns:
+    if explicit_patterns and explicit_topics:
+
+        # When the user explicitly specifies both
+        # a topic and a pattern, both are required.
+        intent["required"].extend(explicit_topics)
+        intent["required"].extend(explicit_patterns)
+
+    elif explicit_patterns:
 
         intent["required"].extend(
             explicit_patterns
@@ -90,6 +111,12 @@ def determine_query_intent(
             explicit_techniques
         )
 
+    elif explicit_topics:
+
+        intent["required"].extend(
+            explicit_topics
+        )
+
     else:
 
         # Nothing explicit.
@@ -102,7 +129,6 @@ def determine_query_intent(
         intent["required"].append(
             strongest
         )
-
 
     # --------------------------------------------------
     # Everything else becomes supporting

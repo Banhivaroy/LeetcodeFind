@@ -213,6 +213,7 @@ def search_from_query(query):
         problems 
     )
 
+    
     # -----------------------------------------
     # Hard filter for required concepts
     # -----------------------------------------
