@@ -22,21 +22,17 @@
 
 .loadingspinner div {
   display: inline-block;
-  background: #ff8c00;
-
-  border: none;
+  background: transparent;
+  border: 2px solid #FFA116;
   border-radius: 2px;
-
   width: var(--square);
   height: var(--square);
-
   position: absolute;
-
   padding: 0;
   margin: 0;
-
   font-size: 6pt;
   color: black;
+  box-sizing: border-box;
 }
 
 .loadingspinner #square1 {
