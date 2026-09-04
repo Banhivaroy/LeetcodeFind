@@ -6,7 +6,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import SpotlightReveal from "@/components/originkit/ui/hero-01/spotlight-reveal";
-import TrustedBy from "@/components/originkit/ui/hero-01/trusted-by";
+
 import { useNavigate } from "react-router-dom";
 import SearchPage from "@/components/SearchPage";
 
@@ -189,6 +189,7 @@ const Hero01Content = () => {
   const [showDescription, setShowDescription] = useState(false);
   const [showCtas, setShowCtas] = useState(false);
   const [showTrusted, setShowTrusted] = useState(false);
+  const [closing, setClosing] = useState(false);
 
   useEffect(() => {
     if (!prefersReducedMotion) return;
@@ -215,8 +216,24 @@ const Hero01Content = () => {
     setShowTrusted(true);
   };
 
+  const handleGetStarted = () => {
+  setClosing(true);
+
+  setTimeout(() => {
+    navigate("/search");
+  }, 700);
+};
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white px-3 pt-2.5 text-[#010110]">
+   <motion.main
+  className="min-h-screen overflow-x-hidden bg-white px-3 pt-2.5 text-[#010110]"
+  animate={{
+    y: closing ? "-100%" : "0%",
+  }}
+  transition={{
+    duration: 0.7,
+    ease: [0.77, 0, 0.175, 1],
+  }}
+>
       <section
         aria-labelledby="onchat-hero-heading"
         className="relative mx-auto w-full overflow-hidden md:rounded-[10px] bg-[url(/originkit/hero-01/mesh-gradient.png)] bg-cover bg-center pb-0 rounded-[10px] ipad:pb-10 desktop-sm:min-h-200"
@@ -289,7 +306,7 @@ const Hero01Content = () => {
             >
               <Annotation />
               <button
-                onClick={() => navigate("/search")}
+                onClick={handleGetStarted}
                 className="relative inline-flex min-h-11.5 w-full shrink-0 items-center justify-center overflow-clip rounded-full border-3 border-solid border-[#3E3E3E] bg-linear-to-b from-[#292929] to-[#111] py-3.5 pr-5 pl-[19px] text-center text-[clamp(15px,2.5vw,16px)] font-medium leading-[1.1] tracking-[-0.01em] text-white transition-[opacity,transform] duration-200 ease focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#010110] active:scale-[0.96] motion-reduce:active:scale-100 ipad:w-auto [@media(hover:hover)_and_(pointer:fine)]:hover:opacity-90"
               >
                 Get Started
@@ -303,7 +320,7 @@ const Hero01Content = () => {
       {/* <div className="relative z-10 mt-0 flex flex-col items-center px-4 pt-13.5 md:pt-17.5 pb-12 ipad:px-6 ipad:pb-16 laptop:pb-20">
         <TrustedBy logos={TRUSTED_LOGOS} active={showTrusted} />
       </div> */}
-    </main>
+    </motion.main>
   );
 };
 
